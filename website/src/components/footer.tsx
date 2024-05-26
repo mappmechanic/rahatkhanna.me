@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function Footer(props) {
+export function Footer() {
   return (
     <footer className="px-4 md:px-6 py-4 flex items-center justify-between bg-white/10 text-white">
       <div className="text-sm">©2024 RahatKhanna.me All rights reserved.</div>
