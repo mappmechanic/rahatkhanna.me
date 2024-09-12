@@ -1,0 +1,13 @@
+/* website/src/components/youtube/styles.css */
+.tv-container {
+    transform-style: preserve-3d;
+}
+.tv-frame {
+    transform: perspective(1000px) rotateX(5deg);
+}
+.tv-antenna-left {
+    transform: rotate(-15deg);
+}
+.tv-antenna-right {
+    transform: rotate(15deg);
+}

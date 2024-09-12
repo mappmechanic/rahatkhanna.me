@@ -1,8 +1,15 @@
 import NewsletterForm from "./newsletter-form";
+// Update the path if necessary
+import { Youtube } from "./youtube/youtube";
 
 export function LandingPage() {
   return (
     <main className="flex-1 flex flex-col items-center justify-center px-4 md:px-6 space-y-6">
+      <div className="w-full space-y-2">
+        <div className="flex justify-center">
+          <Youtube videoId="2RwvQwjTNhs" />
+        </div>
+      </div>
       <div className="text-center space-y-2">
         <h1 className="text-3.2xl md:text-4.8xl font-bold tracking-tighter text-white">
           <span>Ready to</span>
@@ -15,9 +22,6 @@ export function LandingPage() {
           Subscribe to the newsletter
         </p>
         <NewsletterForm />
-      </div>
-      <div className="w-full max-w-md space-y-2">
-        
       </div>
     </main>
   );
