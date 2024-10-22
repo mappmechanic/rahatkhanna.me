@@ -46,7 +46,7 @@ const AboutSection = () => {
                     >
                         <div>
                             <p className="mb-4">
-                                I've had the privilege of working with some of the most innovative companies:
+                                I&apos;ve had the privilege of working with some of the most innovative companies:
                             </p>
                             <ul className="relative list-none pl-6 space-y-8 border-l-2 border-gray-300">
                                 <li className="relative pl-4 before:absolute before:left-[-30px] before:top-1/2 before:w-4 before:h-4 before:bg-purple-500 before:rounded-full before:border-2 before:border-gray-300">
@@ -62,7 +62,7 @@ const AboutSection = () => {
                                     <strong>Flipkart - Lead UI Engineer (May 2016 - May 2017)</strong>: Led CRM web development for 4,000+ agents, revamping core systems and improving efficiency.
                                 </li>
                                 <li className="relative pl-4 before:absolute before:left-[-30px] before:top-1/2 before:w-4 before:h-4 before:bg-purple-500 before:rounded-full before:border-2 before:border-gray-300">
-                                    <strong>Flipkart - Senior UI Engineer (May 2015 - May 2016)</strong>: Enhanced Flipkart's e-commerce UI/UX, driving engagement and optimizing checkout flows.
+                                    <strong>Flipkart - Senior UI Engineer (May 2015 - May 2016)</strong>: Enhanced Flipkart&apos;s e-commerce UI/UX, driving engagement and optimizing checkout flows.
                                 </li>
                                 <li className="relative pl-4 before:absolute before:left-[-30px] before:top-1/2 before:w-4 before:h-4 before:bg-purple-500 before:rounded-full before:border-2 before:border-gray-300">
                                     <strong>Genpact - Technical Consultant (May 2015 - May 2016)</strong>: Developed AngularJS web apps and hybrid mobile apps, boosting client performance and scalability.

@@ -6,7 +6,7 @@ import AnimatedLandingText from './animated-landing-text';
 import Rocket from './rocket';
 import PlayButton from './play-button';
 
-export default function HeroSection({ onPlay }) {
+export default function HeroSection({ onPlay }: { onPlay: () => void }) {
   const stars = useMemo(() => [...Array(100)].map(() => ({
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,

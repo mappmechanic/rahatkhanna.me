@@ -7,7 +7,7 @@ const PortfolioSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="bg-indigo-800 bg-opacity-50 p-6 rounded-lg">
                         <h3 className="text-2xl font-semibold mb-4">100 Best Albums - Apple Music</h3>
-                        <p>A marketing microsite for Apple's 100 Best Albums awards in 2024. <br />
+                        <p>A marketing microsite for Apple&apos;s 100 Best Albums awards in 2024. <br />
                             <a href="https://100best.music.apple.com" className="text-white underline hover:text-gray-300">https://100best.music.apple.com</a>
                         </p>
                     </div>
@@ -25,7 +25,7 @@ const PortfolioSection = () => {
                     </div>
                     <div className="bg-indigo-800 bg-opacity-50 p-6 rounded-lg">
                         <h3 className="text-2xl font-semibold mb-4">Flipkart My Orders</h3>
-                        <p>My Orders section of the India's largest ecommerce website for all screen sizes. <br />
+                        <p>My Orders section of the India&apos;s largest ecommerce website for all screen sizes. <br />
                             <a href="https://flipkart.com" className="text-white underline hover:text-gray-300">https://flipkart.com</a>
                         </p>
                     </div>
