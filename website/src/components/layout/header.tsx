@@ -76,12 +76,12 @@ export function Header() {
           </button>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden mt-4">
+          <div className="md:hidden mt-4 bg-white bg-opacity-40 backdrop-blur-md p-4 rounded shadow">
             {menuItems.map((item, index) => (
               <button
-                key={item.label} // Corrected key
-                onClick={() => scrollToSection(item.id)} // Corrected to use item.id
-                className={`block w-full text-left text-white px-3 py-2 rounded-md text-sm font-medium ${
+                key={item.label}
+                onClick={() => scrollToSection(item.id)}
+                className={`block w-full text-left text-black px-3 py-2 rounded-md text-sm font-medium ${
                   activeSection === index ? 'bg-purple-600' : 'hover:bg-purple-700'
                 } mb-2`}
               >

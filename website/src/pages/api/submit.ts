@@ -10,11 +10,13 @@ type Data = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   if (req.method === 'POST') {
-    const { email } = req.body;
+    const { email, name, message } = req.body;
 
     try {
       await addDoc(collection(db, 'submissions'), {
         email,
+        name,
+        message,
         timestamp: serverTimestamp(),
       });
       res.status(200).json({ message: 'Submission successful!' });

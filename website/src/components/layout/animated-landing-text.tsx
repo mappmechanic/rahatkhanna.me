@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const AnimatedLandingText = () => {
   const [currentSubtitle, setCurrentSubtitle] = useState(0);
-  const subtitles = ['Focus', 'Discipline', 'Growth', 'AI'];
+  const subtitles = ['Focus', 'Discipline', 'Growth', 'AI', 'Me'];
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -4,8 +4,9 @@ import React, { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import AnimatedLandingText from './animated-landing-text';
 import Rocket from './rocket';
+import PlayButton from './play-button';
 
-export default function HeroSection() {
+export default function HeroSection({ onPlay }) {
   const stars = useMemo(() => [...Array(100)].map(() => ({
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
@@ -58,9 +59,8 @@ export default function HeroSection() {
 
       {/* Celestial object (without text and button) */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className="absolute bottom-52 left-1/2 -translate-x-1/2 -translate-y-1/8"
         animate={{
-          scale: [1, 1.05, 1],
           opacity: [0.8, 1, 0.8],
         }}
         transition={{
@@ -69,7 +69,9 @@ export default function HeroSection() {
           ease: "easeInOut",
         }}
       >
-        <div className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-purple-400 bg-opacity-30 glow-soft" />
+        <div className="w-40 h-40 md:w-60 md:h-60 rounded-full bg-purple-400 bg-opacity-30 glow-soft">
+          <PlayButton onPlay={onPlay} />
+        </div>
       </motion.div>
 
       <style jsx>{`

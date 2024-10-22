@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { inter } from "./fonts";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
+import SocialIcons from "@/components/layout/social-icons";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
@@ -26,12 +27,12 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={inter.className}>
-        <div className="w-full min-h-screen flex flex-col bg-#382c85">
-          <Header />
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
+        <Header />
+        <main className="flex-grow pb-16"> {/* Add padding to account for the fixed footer */}
           {children}
-          <Footer />
-        </div>
+        </main>
+        <Footer />
       </body>
     </html>
   );

@@ -5,11 +5,21 @@ import AboutSection from "./landing-page/about-section";
 import PortfolioSection from "./landing-page/portfolio-section";
 import ContactSection from "./landing-page/contact-section";
 import CoachingSection from "./landing-page/coaching-section";
+import { useState } from 'react'
+import VideoModal from './layout/video-modal'
 
 export function LandingPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handlePlay = () => {
+    setIsModalOpen(true)
+  }
+
   return (
     <div className="relative">
-      <section id="home"><HeroSection /></section>
+      <section id="home">
+        <HeroSection onPlay={handlePlay} />
+      </section>
       <section id="about-me"><AboutSection /></section>
       <section id="portfolio"><PortfolioSection /></section>
       <section id="speaking"><CoachingSection /></section>
@@ -51,6 +61,7 @@ export function LandingPage() {
           scroll-behavior: smooth;
         }
       `}</style>
+      <VideoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }
