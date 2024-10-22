@@ -50,7 +50,7 @@ const ContactSection = () => {
         <div className="min-h-screen bg-gradient-to-b from-purple-800 to-indigo-900 flex flex-col items-center justify-center p-8 pt-24 md:pt-12">
             <div className="max-w-4xl text-center text-white">
                 <h2 className="text-4xl font-bold mb-6">Unleash Newsletter</h2>
-                <p className="text-xl mb-12">Subscribe to Unleash for motivational insights, productivity hacks, and the latest in AI tools and tips. I’ll be sharing real-world strategies and systems that I’ve personally used to grow in the fast-evolving tech landscape. Let’s unlock your full potential together!</p>
+                <p className="text-xl mb-12">Subscribe to Unleash for motivational insights, productivity hacks, and the latest in AI tools and tips. I&apos;ll be sharing real-world strategies and systems that I&apos;ve personally used to grow in the fast-evolving tech landscape. Let&apos;s unlock your full potential together!</p>
             </div>
             <div className="max-w-md w-full bg-white bg-opacity-10 p-8 rounded-lg backdrop-blur-md">
                 <form className="space-y-6" onSubmit={handleSubmit}>

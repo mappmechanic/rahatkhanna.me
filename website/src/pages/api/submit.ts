@@ -2,15 +2,31 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { db, serverTimestamp, collection, addDoc } from '../../lib/firebase';
+import he from 'he';
 
 type Data = {
   message?: string;
   error?: string;
 };
 
+function validateEmail(email: string): boolean {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Simple email regex
+  return re.test(email);
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   if (req.method === 'POST') {
-    const { email, name, message } = req.body;
+    let { email, name, message } = req.body;
+
+    // Escape HTML
+    email = he.escape(email);
+    name = he.escape(name);
+    message = he.escape(message);
+
+    // Validate email
+    if (!validateEmail(email)) {
+      return res.status(400).json({ error: 'Invalid email format.' });
+    }
 
     try {
       await addDoc(collection(db, 'submissions'), {
