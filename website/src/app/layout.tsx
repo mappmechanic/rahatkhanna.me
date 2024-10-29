@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { inter } from "./fonts";
 import "./globals.css";
-import { Header } from "@/components/header";
+import { Header } from "@/components/layout/header";
+import SocialIcons from "@/components/layout/social-icons";
 import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
@@ -18,12 +19,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="w-full min-h-screen flex flex-col bg-gradient-to-r from-[#4c6ef5] to-[#2cb67d]">
-          <Header />
+      <head>
+        <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
+        <Header />
+        <main className="flex-grow pb-16"> {/* Add padding to account for the fixed footer */}
           {children}
-          <Footer />
-        </div>
+        </main>
+        <Footer />
       </body>
     </html>
   );
