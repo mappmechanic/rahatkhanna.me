@@ -16,12 +16,12 @@ export interface Subcategory {
     universe_id: string;
     name: string;
     description: string;
-    tools: string[]; // Array of tool IDs
+    tools: Tool[] | string[]; // Array of tool IDs
 }
 
 export interface Universe {
     id: string;
     name: string;
     description: string;
-    subcategories: string[]; // Array of subcategory IDs
+    subcategories: Subcategory[] | string[]; // Array of subcategory IDs
 }

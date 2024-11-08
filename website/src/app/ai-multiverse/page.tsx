@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/accordion"
 import { AccordionGrid } from "@/components/ui/accordion-grid"
 import { StarryBackground } from "@/components/ui/starry-background"
-import { Universe } from "@/lib/universes/types";
+import { Subcategory, Universe, Tool } from "@/lib/universes/types";
 import { useState, useEffect } from "react";
 
 export default function AIMultiverse() {
@@ -51,7 +51,7 @@ export default function AIMultiverse() {
           As you embark on this adventure, wander through galaxies of <span className="font-semibold text-blue-400">machine learning</span>, navigate nebulae of <span className="font-semibold text-blue-400">natural language processing</span>, and explore the vastness of <span className="font-semibold text-blue-400">computer vision</span>. Each universe reflects the infinite possibilities of AI, waiting to be harnessed.
         </p>
         <p className="text-lg leading-relaxed text-slate-200 mb-6">
-          Whether you're a seasoned traveler or a newcomer, this multiverse inspires exploration. Browse the cosmos of AI tools and let your curiosity guide you to new wonders!
+          Whether you&apos;re a seasoned traveler or a newcomer, this multiverse inspires exploration. Browse the cosmos of AI tools and let your curiosity guide you to new wonders!
         </p>
         
         <AccordionGrid 
@@ -61,7 +61,7 @@ export default function AIMultiverse() {
           }}
           className="gap-6"
         >
-          {universes.map((universe, index) => (
+          {universes.map((universe: any, index) => (
             <div key={universe.id} className="bg-slate-900/50 p-6 rounded-lg">
               <h2 className="text-2xl font-semibold mb-2 text-blue-400">
                 {universe.name}
@@ -69,7 +69,7 @@ export default function AIMultiverse() {
               <p className="text-slate-300 mb-4">{universe.description}</p>
               
               <Accordion type="single" collapsible className="space-y-4">
-                {universe.subcategories.map((subcategory, planetIndex) => (
+                {(universe?.subcategories as Subcategory[]).map((subcategory: Subcategory, planetIndex) => (
                   <AccordionItem 
                     key={planetIndex} 
                     value={`planet-${index}-${planetIndex}`}
@@ -81,7 +81,7 @@ export default function AIMultiverse() {
                     <AccordionContent>
                       <div className="text-slate-300">
                         <ul className="list-disc list-inside space-y-2">
-                          {subcategory.tools.map(tool => (
+                          {(subcategory.tools as Tool[]).map((tool: Tool) => (
                             <li key={tool.id}>
                               <a href={tool.url} target="_blank" rel="noopener noreferrer">
                                 {tool.name} - {tool.description}

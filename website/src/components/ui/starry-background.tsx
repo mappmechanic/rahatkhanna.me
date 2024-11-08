@@ -36,6 +36,8 @@ export function StarryBackground() {
 
     // Animation function
     function animate() {
+      if (!ctx) return;
+      if (!canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       ctx.fillStyle = '#ffffff'
 

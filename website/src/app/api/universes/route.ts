@@ -6,6 +6,6 @@ export async function GET() {
     const universesWithDetails = await DataLayer.getAllUniversesWithDetails();
     return NextResponse.json(universesWithDetails);
   } catch (error) {
-    return NextResponse.json({ message: error.message }, { status: 500 });
+    return NextResponse.json({ message: (error as any).message }, { status: 500 });
   }
 }

@@ -40,7 +40,7 @@ class DataLayer {
   }
 
   // New method: Get all universes with subcategories and tools
-  async getAllUniversesWithDetails(): Promise<(Universe & { subcategories: (Subcategory & { tools: Tool[] })[] })[]> {
+  async getAllUniversesWithDetails(): Promise<(Universe & { subcategories: Subcategory | { tools: Tool[] }[] })[]> {
     const universes = await this.getUniverses();
     const subcategories = await this.getSubcategories();
     const tools = await this.getTools();
@@ -62,12 +62,11 @@ class DataLayer {
             return null; // Skip the tool
           }
           return tool;
-        }).filter(tool => tool !== null); // Filter out null values
+        }).filter(tool => tool !== null) as Tool[]; // Ensure tools are of type Tool[]
+        return { ...subcategory, tools: subcategoryTools as Tool[] };
+      }).filter((subcategory): subcategory is Subcategory & { tools: Tool[] } => subcategory !== null); // Filter out null subcategories
 
-        return { ...subcategory, tools: subcategoryTools };
-      }).filter(subcategory => subcategory !== null); // Filter out null subcategories
-
-      return { ...universe, subcategories: universeSubcategories };
+      return { ...universe, subcategories: universeSubcategories.filter(sub => sub !== null) as (Subcategory & { tools: Tool[] })[] }; // Ensure no null subcategories
     });
   }
 }
