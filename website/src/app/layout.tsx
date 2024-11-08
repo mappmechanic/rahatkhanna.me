@@ -16,6 +16,18 @@ export const metadata: Metadata = {
     "Unleash Your Potential with AI - Personal Growth and Tech Excellence by Rahat Khanna",
   description:
     "Explore Rahat's personal brand website to unlock your potential with cutting-edge AI insights, career guidance, and personal growth strategies. Discover how AI can empower you to achieve excellence in tech and beyond.",
+  themeColor: '#312e81',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Rahat Khanna.me'
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    viewportFit: 'cover'
+  }
 };
 
 export default function RootLayout({

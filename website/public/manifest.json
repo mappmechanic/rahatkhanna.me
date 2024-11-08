@@ -1,0 +1,21 @@
+{
+  "name": "Maxime Heckel",
+  "short_name": "Maxime Heckel",
+  "description": "Personal website and AI Multiverse by Maxime Heckel",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#312e81",
+  "theme_color": "#312e81",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+} 
