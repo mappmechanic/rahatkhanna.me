@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
+
+// Styles & Fonts
 import { inter } from "./fonts";
 import "./globals.css";
+
+// Components
 import { Header } from "@/components/layout/header";
-import SocialIcons from "@/components/layout/social-icons";
 import { Footer } from "@/components/footer";
+
+// Analytics
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title:
@@ -27,12 +33,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="MyWebSite" />
         <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+      <body className={`${inter.className} flex flex-col min-h-screen bg-default`}>
         <Header />
         <main className="flex-grow pb-16"> {/* Add padding to account for the fixed footer */}
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

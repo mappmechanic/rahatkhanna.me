@@ -1,0 +1,332 @@
+[
+    {
+        "id": "github-copilot",
+        "name": "GitHub Copilot",
+        "description": "AI-powered code completion tool that assists with coding.",
+        "logo": "link_to_logo_image",
+        "url": "https://copilot.github.com",
+        "founded_year": 2021,
+        "location": "San Francisco, CA, USA",
+        "funding_round": "Series A"
+    },
+    {
+        "id": "tabnine",
+        "name": "TabNine",
+        "description": "AI autocomplete tool for faster coding.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.tabnine.com",
+        "founded_year": 2019,
+        "location": "Tel Aviv, Israel",
+        "funding_round": "Seed"
+    },
+    {
+        "id": "kite",
+        "name": "Kite",
+        "description": "AI-powered code completion engine.",
+        "logo": "link_to_logo_image",
+        "url": "https://kite.com",
+        "founded_year": 2016,
+        "location": "San Francisco, CA, USA",
+        "funding_round": "Series B"
+    },
+    {
+        "id": "testim",
+        "name": "Testim",
+        "description": "Automates software testing with AI.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.testim.io",
+        "founded_year": 2014,
+        "location": "San Francisco, CA, USA",
+        "funding_round": "Acquired"
+    },
+    {
+        "id": "deepcode",
+        "name": "DeepCode",
+        "description": "AI-powered code review tool that detects vulnerabilities and bugs.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.deepcode.ai",
+        "founded_year": 2018,
+        "location": "Zurich, Switzerland",
+        "funding_round": "Seed"
+    },
+    {
+        "id": "diffblue",
+        "name": "Diffblue",
+        "description": "AI for generating unit tests automatically.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.diffblue.com",
+        "founded_year": 2016,
+        "location": "Oxford, UK",
+        "funding_round": "Series A"
+    },
+    {
+        "id": "harness",
+        "name": "Harness",
+        "description": "Continuous integration and delivery (CI/CD) platform powered by AI.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.harness.io",
+        "founded_year": 2017,
+        "location": "San Francisco, CA, USA",
+        "funding_round": "Series D"
+    },
+    {
+        "id": "circleci",
+        "name": "CircleCI",
+        "description": "CI/CD platform with intelligent automation capabilities.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.circleci.com",
+        "founded_year": 2011,
+        "location": "San Francisco, CA, USA",
+        "funding_round": "Series E"
+    },
+    {
+        "id": "cloudbees",
+        "name": "CloudBees",
+        "description": "Enterprise DevOps and CI/CD automation solutions.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.cloudbees.com",
+        "founded_year": 2010,
+        "location": "San Jose, CA, USA",
+        "funding_round": "Series F"
+    },
+    {
+        "id": "snyk",
+        "name": "Snyk",
+        "description": "Security tool for finding and fixing vulnerabilities in code.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.snyk.io",
+        "founded_year": 2015,
+        "location": "London, UK",
+        "funding_round": "Series E"
+    },
+    {
+        "id": "sonarqube",
+        "name": "SonarQube",
+        "description": "Open-source platform for continuous code quality.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.sonarqube.org",
+        "founded_year": 2008,
+        "location": "Geneva, Switzerland",
+        "funding_round": "Private"
+    },
+    {
+        "id": "shiftleft",
+        "name": "ShiftLeft",
+        "description": "Code security and vulnerability detection for developers.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.shiftleft.io",
+        "founded_year": 2016,
+        "location": "Santa Clara, CA, USA",
+        "funding_round": "Series B"
+    },
+    {
+        "id": "refact-ai",
+        "name": "Refact.ai",
+        "description": "Tool for AI-driven code refactoring and optimization.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.refact.ai",
+        "founded_year": 2020,
+        "location": "Remote",
+        "funding_round": "Seed"
+    },
+    {
+        "id": "sourcery",
+        "name": "Sourcery",
+        "description": "Automated code refactoring tool for Python.",
+        "logo": "link_to_logo_image",
+        "url": "https://sourcery.ai",
+        "founded_year": 2018,
+        "location": "London, UK",
+        "funding_round": "Seed"
+    },
+    {
+        "id": "codeai",
+        "name": "CodeAI",
+        "description": "AI tool for code analysis and refactoring.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.codeai.com",
+        "founded_year": 2019,
+        "location": "San Francisco, CA, USA",
+        "funding_round": "Series A"
+    },
+    {
+        "id": "gitential",
+        "name": "Gitential",
+        "description": "Analytics tool for version control and development insights.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.gitential.com",
+        "founded_year": 2018,
+        "location": "Budapest, Hungary",
+        "funding_round": "Seed"
+    },
+    {
+        "id": "sourcetree-ai",
+        "name": "Sourcetree AI",
+        "description": "AI-powered tool for version control and collaboration.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.sourcetree.ai",
+        "founded_year": 2021,
+        "location": "Remote",
+        "funding_round": "Seed"
+    },
+    {
+        "id": "codescene",
+        "name": "CodeScene",
+        "description": "Predictive code quality and team insights using AI.",
+        "logo": "link_to_logo_image",
+        "url": "https://codescene.io",
+        "founded_year": 2015,
+        "location": "Malmo, Sweden",
+        "funding_round": "Series A"
+    },
+    {
+        "id": "jasper-ai",
+        "name": "Jasper AI",
+        "description": "AI-driven content generation for marketing.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.jasper.ai",
+        "founded_year": 2020,
+        "location": "Austin, TX, USA",
+        "funding_round": "Series B"
+    },
+    {
+        "id": "copy-ai",
+        "name": "Copy.ai",
+        "description": "Generates marketing copy quickly with AI.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.copy.ai",
+        "founded_year": 2020,
+        "location": "San Francisco, CA, USA",
+        "funding_round": "Series A"
+    },
+    {
+        "id": "writesonic",
+        "name": "Writesonic",
+        "description": "AI writing tool for blogs, ads, and more.",
+        "logo": "link_to_logo_image",
+        "url": "https://writesonic.com",
+        "founded_year": 2021,
+        "location": "Remote",
+        "funding_round": "Series A"
+    },
+    {
+        "id": "hootsuite",
+        "name": "Hootsuite",
+        "description": "Social media scheduling and automation tool.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.hootsuite.com",
+        "founded_year": 2008,
+        "location": "Vancouver, Canada",
+        "funding_round": "Series E"
+    },
+    {
+        "id": "sprout-social",
+        "name": "Sprout Social",
+        "description": "Social media management and analytics platform.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.sproutsocial.com",
+        "founded_year": 2010,
+        "location": "Chicago, IL, USA",
+        "funding_round": "Public"
+    },
+    {
+        "id": "lately",
+        "name": "Lately",
+        "description": "AI for social media content and scheduling.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.lately.ai",
+        "founded_year": 2017,
+        "location": "New York, NY, USA",
+        "funding_round": "Series A"
+    },
+    {
+        "id": "clearscope",
+        "name": "Clearscope",
+        "description": "Content optimization tool for SEO.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.clearscope.io",
+        "founded_year": 2016,
+        "location": "Austin, TX, USA",
+        "funding_round": "Bootstrapped"
+    },
+    {
+        "id": "surferseo",
+        "name": "SurferSEO",
+        "description": "SEO content analysis and optimization platform.",
+        "logo": "link_to_logo_image",
+        "url": "https://surferseo.com",
+        "founded_year": 2017,
+        "location": "Wroclaw, Poland",
+        "funding_round": "Series A"
+    },
+    {
+        "id": "marketmuse",
+        "name": "MarketMuse",
+        "description": "AI-powered content research and SEO optimization.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.marketmuse.com",
+        "founded_year": 2013,
+        "location": "Boston, MA, USA",
+        "funding_round": "Series A"
+    },
+    {
+        "id": "dynamic-yield",
+        "name": "Dynamic Yield",
+        "description": "Personalized marketing platform for website optimization.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.dynamicyield.com",
+        "founded_year": 2011,
+        "location": "New York, NY, USA",
+        "funding_round": "Acquired by McDonald's"
+    },
+    {
+        "id": "blueshift",
+        "name": "Blueshift",
+        "description": "AI-driven customer engagement platform.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.blueshift.com",
+        "founded_year": 2014,
+        "location": "San Francisco, CA, USA",
+        "funding_round": "Series C"
+    },
+    {
+        "id": "optimizely",
+        "name": "Optimizely",
+        "description": "Experimentation and personalization platform.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.optimizely.com",
+        "founded_year": 2010,
+        "location": "San Francisco, CA, USA",
+        "funding_round": "Series E"
+    },
+    {
+        "id": "google-analytics-intelligence",
+        "name": "Google Analytics Intelligence",
+        "description": "AI-driven insights for website traffic and user behavior.",
+        "logo": "link_to_logo_image",
+        "url": "https://analytics.google.com",
+        "founded_year": 2005,
+        "location": "Mountain View, CA, USA",
+        "funding_round": "Public"
+      },
+      {
+        "id": "datorama",
+        "name": "Datorama",
+        "description": "Marketing intelligence and analytics platform acquired by Salesforce.",
+        "logo": "link_to_logo_image",
+        "url": "https://www.datorama.com",
+        "founded_year": 2012,
+        "location": "New York, NY, USA",
+        "funding_round": "Acquired by Salesforce"
+      },
+      {
+        "id": "supermetrics",
+        "name": "Supermetrics",
+        "description": "Data analytics and reporting tool for marketers.",
+        "logo": "link_to_logo_image",
+        "url": "https://supermetrics.com",
+        "founded_year": 2013,
+        "location": "Helsinki, Finland",
+        "funding_round": "Series A"
+      }
+]

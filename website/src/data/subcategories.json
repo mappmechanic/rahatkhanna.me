@@ -1,0 +1,86 @@
+[
+    {
+      "id": "ai-code-assistance",
+      "universe_id": "ai-for-software-developers",
+      "name": "AI Code Assistance",
+      "description": "Tools that help with code generation, syntax suggestions, and auto-completion.",
+      "tools": ["github-copilot", "tabnine", "kite"]
+    },
+    {
+      "id": "automated-testing",
+      "universe_id": "ai-for-software-developers",
+      "name": "Automated Testing & Debugging",
+      "description": "AI-driven tools for automated testing and debugging assistance.",
+      "tools": ["testim", "deepcode", "diffblue"]
+    },
+    {
+      "id": "devops-automation",
+      "universe_id": "ai-for-software-developers",
+      "name": "DevOps & CI/CD Automation",
+      "description": "AI tools for automating CI/CD pipelines and DevOps tasks.",
+      "tools": ["harness", "circleci", "cloudbees"]
+    },
+    {
+      "id": "security-vulnerability-detection",
+      "universe_id": "ai-for-software-developers",
+      "name": "Security & Vulnerability Detection",
+      "description": "AI tools to detect vulnerabilities and improve code security.",
+      "tools": ["snyk", "sonarqube", "shiftleft"]
+    },
+    {
+      "id": "code-refactoring-optimization",
+      "universe_id": "ai-for-software-developers",
+      "name": "Code Refactoring & Optimization",
+      "description": "Tools to refactor and optimize code for better readability and performance.",
+      "tools": ["refact-ai", "sourcery", "codeai"]
+    },
+    {
+      "id": "version-control-collaboration",
+      "universe_id": "ai-for-software-developers",
+      "name": "Version Control & Collaboration",
+      "description": "AI tools for version control and team collaboration.",
+      "tools": ["gitential", "sourcetree-ai", "codescene"]
+    },
+    {
+      "id": "content-creation",
+      "universe_id": "ai-for-marketers",
+      "name": "Content Creation",
+      "description": "AI tools for creating written and visual content.",
+      "tools": ["jasper-ai", "copy-ai", "writesonic"]
+    },
+    {
+      "id": "social-media-management",
+      "universe_id": "ai-for-marketers",
+      "name": "Social Media Management",
+      "description": "Tools to manage social media posting and engagement.",
+      "tools": ["hootsuite", "sprout-social", "lately"]
+    },
+    {
+      "id": "seo-sem-optimization",
+      "universe_id": "ai-for-marketers",
+      "name": "SEO & SEM Optimization",
+      "description": "AI tools to optimize SEO and search engine marketing.",
+      "tools": ["clearscope", "surferseo", "marketmuse"]
+    },
+    {
+      "id": "personalized-marketing",
+      "universe_id": "ai-for-marketers",
+      "name": "Personalized Marketing",
+      "description": "Tools to personalize marketing efforts based on customer behavior.",
+      "tools": ["dynamic-yield", "blueshift", "optimizely"]
+    },
+    {
+      "id": "email-marketing-automation",
+      "universe_id": "ai-for-marketers",
+      "name": "Email Marketing Automation",
+      "description": "AI tools for automating email marketing campaigns and personalization.",
+      "tools": ["mailchimp-ai", "activecampaign", "hubspot-ai"]
+    },
+    {
+      "id": "analytics-insights",
+      "universe_id": "ai-for-marketers",
+      "name": "Analytics & Insights",
+      "description": "AI-powered tools for analyzing marketing performance and generating insights.",
+      "tools": ["google-analytics-intelligence", "datorama", "supermetrics"]
+    }
+  ]

@@ -1,0 +1,32 @@
+[
+    {
+      "id": "ai-for-software-developers",
+      "name": "AI for Software Developers",
+      "description": "AI tools designed to support software developers with coding, testing, DevOps, and security.",
+      "subcategories": [
+        "ai-code-assistance",
+        "automated-testing",
+        "devops-automation",
+        "security-vulnerability-detection",
+        "code-refactoring-optimization",
+        "version-control-collaboration"
+      ]
+    },
+    {
+      "id": "ai-for-marketers",
+      "name": "AI for Marketers",
+      "description": "AI tools to help marketers with content creation, social media, SEO, and campaign optimization.",
+      "subcategories": [
+        "content-creation",
+        "social-media-management",
+        "seo-sem-optimization",
+        "personalized-marketing",
+        "email-marketing-automation",
+        "analytics-insights",
+        "ad-campaign-optimization",
+        "customer-behavior-sentiment-analysis",
+        "visual-creative-design",
+        "influencer-marketing"
+      ]
+    }
+  ]
