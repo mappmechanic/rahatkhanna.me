@@ -84,7 +84,7 @@ const AboutSection = () => {
                     </ExpandableCard>
                     <ExpandableCard
                         id={3}
-                        title="2024 Milestones"
+                        title="2025 Milestones"
                         previewContent={
                             <>
                                 <div className="flex flex-wrap space-x-8 text-gray-600 w-full">
