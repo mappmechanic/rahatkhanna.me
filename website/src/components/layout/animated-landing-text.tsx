@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const AnimatedLandingText = () => {
   const [currentSubtitle, setCurrentSubtitle] = useState(0);
-  const subtitles = ['Focus', 'Discipline', 'Growth', 'AI', 'Me'];
+  const subtitles = ['AI Agents', 'Observability', 'Scale', 'Impact', 'You'];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -69,7 +69,7 @@ const AnimatedLandingText = () => {
         className="text-4xl md:text-6xl sm:text-5xl font-semibold flex items-center mb-4"
         variants={itemVariants}
       >
-        <span className="mr-4 text-purple-200">your potential with</span>
+        <span className="mr-4 text-purple-200">the future with</span>
       </motion.div>
       <motion.div 
         className="text-5xl md:text-7xl sm:text-6xl font-semibold flex items-center"
