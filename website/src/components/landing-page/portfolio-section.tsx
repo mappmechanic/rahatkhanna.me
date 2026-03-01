@@ -1,9 +1,9 @@
 const PortfolioSection = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-indigo-900 to-purple-800 flex items-center justify-center p-8 pt-24 md:pt-12">
-            <div className="max-w-4xl text-center text-white">
+        <div className="bg-gradient-to-b from-indigo-900 to-purple-800 py-20 md:py-28 px-8">
+            <div className="max-w-6xl mx-auto text-center text-white">
                 <h2 className="text-4xl font-bold mb-6">Portfolio</h2>
-                <p className="text-xl mb-12">Showcasing my top projects and achievements.</p>
+                <p className="text-xl mb-12">A selection of the systems, platforms, and products I&apos;ve shipped.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {/* Featured AI project — full width */}
                     <div className="md:col-span-2 bg-blue-900 bg-opacity-70 border border-blue-400 border-opacity-40 p-6 rounded-lg text-left">

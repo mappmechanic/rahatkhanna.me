@@ -3,12 +3,33 @@ import ExpandableCard from "../ui/expandable-card";
 
 const AboutSection = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-purple-600 to-indigo-900 flex items-center justify-center p-8 pt-24 md:pt-12">
-            <div className="max-w-4xl text-center text-white">
+        <div className="bg-gradient-to-b from-purple-600 to-indigo-900 py-20 md:py-28 px-8">
+            <div className="max-w-6xl mx-auto text-center text-white">
                 <h2 className="text-2xl md:text-4xl font-bold mb-6">About Me</h2>
-                <p className="text-base md:text-xl mb-4 md:mb-8">
+                <p className="text-base md:text-xl mb-8 md:mb-12 max-w-3xl mx-auto">
                     Staff Software Engineer at Apple, where I build the infrastructure for AI Agents — observability pipelines, evaluation frameworks, and the platforms that make AI reliable at scale. 13+ years of engineering across Apple, Flipkart, and my own ventures, now fully focused on the frontier of AI-native systems.
                 </p>
+
+                {/* Stats strip */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 md:mb-16">
+                    <div className="bg-white bg-opacity-10 rounded-xl py-4 px-2">
+                        <p className="text-2xl md:text-3xl font-bold text-yellow-300">13+</p>
+                        <p className="text-xs md:text-sm text-purple-200 uppercase tracking-wider mt-1">Years Engineering</p>
+                    </div>
+                    <div className="bg-white bg-opacity-10 rounded-xl py-4 px-2">
+                        <p className="text-2xl md:text-3xl font-bold text-yellow-300">Staff</p>
+                        <p className="text-xs md:text-sm text-purple-200 uppercase tracking-wider mt-1">Engineer, Apple</p>
+                    </div>
+                    <div className="bg-white bg-opacity-10 rounded-xl py-4 px-2">
+                        <p className="text-2xl md:text-3xl font-bold text-yellow-300">40+</p>
+                        <p className="text-xs md:text-sm text-purple-200 uppercase tracking-wider mt-1">Engineers Coached</p>
+                    </div>
+                    <div className="bg-white bg-opacity-10 rounded-xl py-4 px-2">
+                        <p className="text-2xl md:text-3xl font-bold text-yellow-300">AI</p>
+                        <p className="text-xs md:text-sm text-purple-200 uppercase tracking-wider mt-1">Agent Infra · v1 Shipped</p>
+                    </div>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <ExpandableCard
                         id={1}
@@ -156,8 +177,8 @@ const AboutSection = () => {
                         </div>
                     </ExpandableCard>
                 </div>
-            </div >
-        </div >
+            </div>
+        </div>
     )
 }
 
