@@ -1,0 +1,22 @@
+# Bun configuration for rahatkhanna.me
+
+[install]
+# Use the npm registry (same as .npmrc)
+registry = "https://registry.npmjs.org/"
+
+# Automatically install peer dependencies
+auto = "auto"
+
+# Freeze lockfile in CI environments (set via BUN_CONFIG_FROZEN_LOCKFILE=true)
+# frozenLockfile = false
+
+[install.cache]
+# Default cache directory (~/.bun/install/cache)
+# dir = "~/.bun/install/cache"
+
+# Disable cache in CI if needed (BUN_CONFIG_NO_CACHE=true)
+disable = false
+
+[run]
+# Bun runs scripts ~4x faster than npm
+# No additional config needed — `bun run dev` just works
