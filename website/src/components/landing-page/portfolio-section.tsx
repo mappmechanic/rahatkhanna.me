@@ -8,14 +8,13 @@ const PortfolioSection = () => {
                     {/* Featured AI project — full width */}
                     <div className="md:col-span-2 bg-blue-900 bg-opacity-70 border border-blue-400 border-opacity-40 p-6 rounded-lg text-left">
                         <div className="flex items-center gap-3 mb-3">
-                            <span className="text-xs font-semibold uppercase tracking-widest text-blue-300 bg-blue-800 bg-opacity-60 px-3 py-1 rounded-full">AI Infrastructure · Apple</span>
+                            <span className="text-xs font-semibold uppercase tracking-widest text-blue-300 bg-blue-800 bg-opacity-60 px-3 py-1 rounded-full">AI Infrastructure</span>
                         </div>
                         <h3 className="text-2xl font-semibold mb-3">Agent Observability & Evaluation Platform</h3>
                         <p className="text-gray-200 mb-3">
-                            End-to-end platform for monitoring, tracing, and evaluating AI Agents in production. Built at Apple — powers reliability and quality assurance for LLM-based systems at scale, with real-time observability pipelines and automated evaluation frameworks.
+                            End-to-end platform for monitoring, tracing, and evaluating AI Agents in production — powering reliability and quality assurance for LLM-based systems at scale, with real-time observability pipelines and automated evaluation frameworks.
                         </p>
-                        <p className="text-sm text-blue-300 font-medium">Python · React · LLM Evaluation · Observability · Data & ML Platform</p>
-                        <p className="text-xs text-gray-400 mt-2 italic">Internal platform — Apple Confidential</p>
+                        <p className="text-sm text-blue-300 font-medium">Python · React · LLM Evaluation · Observability · Platform Engineering</p>
                     </div>
                     <div className="bg-indigo-800 bg-opacity-50 p-6 rounded-lg">
                         <h3 className="text-2xl font-semibold mb-4">100 Best Albums - Apple Music</h3>

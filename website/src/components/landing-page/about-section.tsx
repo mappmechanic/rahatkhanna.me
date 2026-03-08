@@ -7,7 +7,7 @@ const AboutSection = () => {
             <div className="max-w-6xl mx-auto text-center text-white">
                 <h2 className="text-2xl md:text-4xl font-bold mb-6">About Me</h2>
                 <p className="text-base md:text-xl mb-8 md:mb-12 max-w-3xl mx-auto">
-                    Staff Software Engineer at Apple, where I build the infrastructure for AI Agents — observability pipelines, evaluation frameworks, and the platforms that make AI reliable at scale. 13+ years of engineering across Apple, Flipkart, and my own ventures, now fully focused on the frontier of AI-native systems.
+                    Staff Engineer at Apple, building infrastructure for AI Agents. 13+ years of engineering across Apple, Flipkart, and my own ventures, now fully focused on the frontier of AI-native systems.
                 </p>
 
                 {/* Stats strip */}
@@ -45,7 +45,7 @@ const AboutSection = () => {
                             <ul>
                                 <li className="mb-2"><strong>AI Agent Infrastructure</strong><br /> Building observability pipelines and evaluation frameworks for LLM-based agents in production.</li>
                                 <li className="mb-2"><strong>LLM Observability & Evaluation</strong><br /> Designing systems that make AI behaviour measurable, debuggable, and reliable at scale.</li>
-                                <li className="mb-2"><strong>Platform Engineering</strong><br /> Full-stack platforms in Python & React powering data and ML workflows at Apple.</li>
+                                <li className="mb-2"><strong>Platform Engineering</strong><br /> Full-stack platforms in Python & React powering data and ML workflows at scale.</li>
                                 <li className="mb-2"><strong>Engineering Leadership</strong><br /> Driving cross-functional delivery for high-impact products used by millions globally.</li>
                                 <li className="mb-2"><strong>Technical Mentorship</strong><br /> Coaching 40+ engineers and professionals toward career growth in the AI era.</li>
                             </ul>
@@ -59,8 +59,8 @@ const AboutSection = () => {
                         title="Career Highlights"
                         previewContent={
                             <>
-                                <p className="text-gray-600 text-xs">Staff Sw Eng, Data & ML Platform <span className="text-sm font-bold">2021-Present</span><br /><span className="text-purple-500 text-sm font-semibold">Apple Inc</span></p>
-                                <p className="text-gray-600 text-xs">Senior Sw Eng <span className="text-sm font-bold">2017-2021</span><br /><span className="text-purple-500 text-sm font-semibold">Apple India</span></p>
+                                <p className="text-gray-600 text-xs">Staff Software Engineer <span className="text-sm font-bold">2022–Present</span><br /><span className="text-purple-500 text-sm font-semibold">Apple Inc</span></p>
+                                <p className="text-gray-600 text-xs">Senior Software Engineer <span className="text-sm font-bold">2017–2022</span><br /><span className="text-purple-500 text-sm font-semibold">Apple India</span></p>
                                 <p className="text-gray-600 text-xs">Senior UI Eng <span className="text-sm font-bold">2015-2017</span><br /><span className="text-purple-500 text-sm font-semibold">Flipkart (Walmart)</span></p>
                             </>
                         }
@@ -71,7 +71,7 @@ const AboutSection = () => {
                             </p>
                             <ul className="relative list-none pl-6 space-y-8 border-l-2 border-gray-300">
                                 <li className="relative pl-4 before:absolute before:left-[-30px] before:top-1/2 before:w-4 before:h-4 before:bg-purple-500 before:rounded-full before:border-2 before:border-gray-300">
-                                    <strong>Apple - Staff Software Engineer, Data & ML Platform (Oct 2022 - Present)</strong>: Building AI Agent infrastructure — observability, evaluation frameworks, and Python & React platforms powering ML workflows at scale.
+                                    <strong>Apple - Staff Software Engineer (Oct 2022 - Present)</strong>: Building infrastructure for AI Agents — working across observability, evaluation, and platform engineering at scale.
                                 </li>
                                 <li className="relative pl-4 before:absolute before:left-[-30px] before:top-1/2 before:w-4 before:h-4 before:bg-purple-500 before:rounded-full before:border-2 before:border-gray-300">
                                     <strong>Apple - Senior Software Engineer (May 2020 - Oct 2022)</strong>: Managed web experiences for Apple Books, TV, and Podcasts, collaborating with cross-functional teams to deliver impactful solutions.
@@ -86,7 +86,7 @@ const AboutSection = () => {
                                     <strong>Flipkart - Senior UI Engineer (May 2015 - May 2016)</strong>: Enhanced Flipkart&apos;s e-commerce UI/UX, driving engagement and optimizing checkout flows.
                                 </li>
                                 <li className="relative pl-4 before:absolute before:left-[-30px] before:top-1/2 before:w-4 before:h-4 before:bg-purple-500 before:rounded-full before:border-2 before:border-gray-300">
-                                    <strong>Genpact - Technical Consultant (May 2015 - May 2016)</strong>: Developed AngularJS web apps and hybrid mobile apps, boosting client performance and scalability.
+                                    <strong>Genpact - Technical Consultant (May 2014 - May 2015)</strong>: Developed AngularJS web apps and hybrid mobile apps, boosting client performance and scalability.
                                 </li>
                                 <li className="relative pl-4 before:absolute before:left-[-30px] before:top-1/2 before:w-4 before:h-4 before:bg-purple-500 before:rounded-full before:border-2 before:border-gray-300">
                                     <strong>Genpact - Senior Associate (May 2012 - May 2014)</strong>: Built mobile solutions and healthcare web apps adopted by 3,000+ users globally.
