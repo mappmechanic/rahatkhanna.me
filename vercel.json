@@ -2,6 +2,5 @@
   "rootDirectory": "website",
   "installCommand": "bun install",
   "buildCommand": "bun run build",
-  "devCommand": "bun run dev",
-  "framework": "nextjs"
+  "devCommand": "bun run dev"
 }
