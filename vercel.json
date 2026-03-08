@@ -1,6 +1,5 @@
 {
-  "rootDirectory": "website",
-  "installCommand": "bun install",
-  "buildCommand": "bun run build",
-  "devCommand": "bun run dev"
+  "installCommand": "cd website && bun install",
+  "buildCommand": "cd website && bun run build",
+  "devCommand": "cd website && bun run dev"
 }
