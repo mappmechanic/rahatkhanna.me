@@ -60,7 +60,7 @@ const ContactSection = () => {
                         <ul className="space-y-4 text-purple-100">
                             <li className="flex items-start gap-3">
                                 <span className="text-yellow-300 mt-0.5 text-lg">→</span>
-                                <span>Practical AI tooling and workflow tips from production systems at Apple</span>
+                                <span>Practical AI tooling and workflow tips from real production systems</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-yellow-300 mt-0.5 text-lg">→</span>
@@ -68,7 +68,7 @@ const ContactSection = () => {
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-yellow-300 mt-0.5 text-lg">→</span>
-                                <span>Lessons from 13+ years across Apple, Flipkart, and my own ventures</span>
+                                <span>Lessons from 13+ years across big tech, startups, and my own ventures</span>
                             </li>
                             <li className="flex items-start gap-3">
                                 <span className="text-yellow-300 mt-0.5 text-lg">→</span>
