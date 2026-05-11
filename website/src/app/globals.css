@@ -3,26 +3,311 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start: #312e81;
-  --background-end-rgb: 255, 255, 255;
+  --background: 224 37% 5%;
+  --foreground: 210 35% 96%;
+  --card: 222 28% 9%;
+  --card-foreground: 210 35% 96%;
+  --primary: 202 100% 58%;
+  --primary-foreground: 224 37% 5%;
+  --secondary: 268 38% 58%;
+  --secondary-foreground: 210 35% 96%;
+  --muted: 220 18% 17%;
+  --muted-foreground: 214 17% 72%;
+  --accent: 39 94% 62%;
+  --accent-foreground: 224 37% 5%;
+  --border: 215 24% 20%;
+  --input: 215 24% 20%;
+  --ring: 202 100% 58%;
+  --card-radius: 8px;
+  --space-void: 224 37% 5%;
+  --space-panel: 220 27% 10%;
+  --space-line: 202 74% 37%;
+  --space-signal: 202 100% 58%;
+  --space-ember: 39 94% 62%;
+  --space-mint: 153 60% 55%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: hsl(var(--background));
+  }
+
+  body {
+    @apply bg-background font-body text-foreground antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    font-feature-settings: "ss01" 1, "ss02" 1, "cv01" 1;
+  }
+
+  code,
+  pre,
+  kbd {
+    @apply font-mission;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.35);
+  }
+
+  a,
+  button {
+    text-underline-offset: 4px;
+  }
+
+  img,
+  video,
+  canvas,
+  svg {
+    max-width: 100%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: var(--background-start)
-}
+@layer components {
+  .space-field {
+    background:
+      radial-gradient(circle at 18% 18%, hsl(var(--space-signal) / 0.08), transparent 24rem),
+      radial-gradient(circle at 88% 8%, hsl(var(--space-ember) / 0.08), transparent 22rem),
+      linear-gradient(180deg, hsl(var(--space-void)), hsl(225 34% 7%));
+  }
 
-@layer utilities {
+  .space-grid {
+    background-image:
+      linear-gradient(hsl(var(--space-line) / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--space-line) / 0.08) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, transparent, black 12%, black 76%, transparent);
+  }
+
+  .star-noise {
+    background-image:
+      radial-gradient(circle, rgba(255,255,255,0.72) 0 1px, transparent 1.5px),
+      radial-gradient(circle, rgba(125,211,252,0.46) 0 1px, transparent 1.4px);
+    background-position: 0 0, 34px 46px;
+    background-size: 120px 120px, 180px 180px;
+  }
+
+  .telemetry-panel {
+    border: 1px solid hsl(var(--border));
+    background: linear-gradient(180deg, hsl(var(--card) / 0.92), hsl(var(--card) / 0.72));
+    border-radius: var(--card-radius);
+    box-shadow: 0 24px 90px hsl(224 37% 2% / 0.42);
+  }
+
   .text-balance {
     text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .font-mission {
+    font-family: var(--font-mission), ui-monospace, SFMono-Regular, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .font-display {
+    font-family: var(--font-display), var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .rk-wordmark {
+    font-family: var(--font-display), var(--font-body), ui-sans-serif, system-ui, sans-serif;
+    font-feature-settings: "ss01" 1, "ss02" 1, "cv01" 1;
+  }
+
+  .mission-node {
+    clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 12px);
+  }
+
+  .trajectory-band {
+    clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%, 18px 50%);
+  }
+
+  .signal-ribbon {
+    clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%);
+  }
+
+  .hud-frame {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid hsl(var(--space-line) / 0.38);
+    background:
+      linear-gradient(135deg, hsl(var(--space-signal) / 0.13), transparent 22%),
+      linear-gradient(315deg, hsl(var(--space-ember) / 0.10), transparent 20%),
+      linear-gradient(180deg, hsl(var(--space-panel) / 0.92), hsl(var(--space-void) / 0.76));
+    box-shadow:
+      inset 0 0 0 1px hsl(var(--space-signal) / 0.08),
+      0 28px 110px hsl(224 37% 2% / 0.52);
+    clip-path: polygon(20px 0, calc(100% - 42px) 0, 100% 42px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 42px 100%, 0 calc(100% - 42px), 0 20px);
+  }
+
+  .hud-frame::before,
+  .hud-frame::after {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    pointer-events: none;
+    border: 1px solid hsl(var(--space-signal) / 0.10);
+    clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+  }
+
+  .hud-frame::after {
+    border-color: hsl(var(--space-ember) / 0.10);
+    inset: 34px;
+  }
+
+  .hud-scan {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent, hsl(var(--space-signal) / 0.10), transparent);
+    transform: translateY(-100%);
+    animation: hud-scan 5.5s linear infinite;
+  }
+
+  .reactor-orb {
+    background:
+      radial-gradient(circle at center, hsl(var(--space-signal) / 0.34) 0 9%, transparent 10% 18%, hsl(var(--space-signal) / 0.16) 19% 23%, transparent 24% 100%),
+      conic-gradient(from 0deg, transparent, hsl(var(--space-signal)), transparent, hsl(var(--space-ember)), transparent);
+    animation: reactor-spin 12s linear infinite;
+  }
+
+  .reactor-orb::before {
+    content: "";
+    position: absolute;
+    inset: 18%;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--space-mint) / 0.42);
+    background: radial-gradient(circle, hsl(var(--space-signal) / 0.25), transparent 64%);
+    animation: reactor-pulse 2.8s ease-in-out infinite;
+  }
+
+  .hud-cell {
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  }
+
+  .hud-flip-scene {
+    perspective: 1400px;
+  }
+
+  .hud-loader-orbit {
+    position: relative;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--space-line) / 0.36);
+  }
+
+  .hud-loader-orbit::before,
+  .hud-loader-orbit::after {
+    content: "";
+    position: absolute;
+    inset: 18%;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--space-signal) / 0.26);
+  }
+
+  .hud-loader-orbit::after {
+    inset: 36%;
+    border-color: hsl(var(--space-ember) / 0.28);
+  }
+
+  .hud-loader-dot {
+    animation: hud-orbit 2.4s linear infinite;
+    transform-origin: center;
+  }
+
+  .telemetry-shimmer {
+    background: linear-gradient(90deg, hsl(var(--space-panel) / 0.55), hsl(var(--space-signal) / 0.16), hsl(var(--space-panel) / 0.55));
+    background-size: 220% 100%;
+    animation: telemetry-shimmer 1.8s ease-in-out infinite;
+  }
+
+  .hud-reveal-mask {
+    animation: hud-reveal-mask 1.2s ease-out both;
+  }
+
+  .os-orbit-shell {
+    background:
+      radial-gradient(circle at 50% 50%, hsl(var(--space-signal) / 0.18), transparent 9rem),
+      repeating-radial-gradient(circle at 50% 50%, hsl(var(--space-line) / 0.18) 0 1px, transparent 1px 38px);
+    mask-image: radial-gradient(circle, black 0 64%, transparent 74%);
+  }
+}
+
+@keyframes hud-scan {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  12%,
+  82% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes reactor-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reactor-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes hud-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes telemetry-shimmer {
+  0% {
+    background-position: 120% 0;
+  }
+  100% {
+    background-position: -120% 0;
+  }
+}
+
+@keyframes hud-reveal-mask {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0.2;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

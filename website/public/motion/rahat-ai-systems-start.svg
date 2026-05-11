@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Quiet deep-space start frame</title>
+  <desc id="desc">A restrained space field with telemetry lines around an AI systems thesis.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#05070d"/>
+      <stop offset="0.54" stop-color="#09111f"/>
+      <stop offset="1" stop-color="#101421"/>
+    </linearGradient>
+    <pattern id="grid" width="96" height="96" patternUnits="userSpaceOnUse">
+      <path d="M96 0H0V96" fill="none" stroke="#1f7faa" stroke-opacity=".13" stroke-width="1"/>
+    </pattern>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#grid)" opacity=".7"/>
+  <g opacity=".45">
+    <circle cx="320" cy="210" r="1.6" fill="#fff"/>
+    <circle cx="540" cy="160" r="1.1" fill="#8fdfff"/>
+    <circle cx="780" cy="310" r="1.2" fill="#fff"/>
+    <circle cx="1080" cy="180" r="1.4" fill="#fff"/>
+    <circle cx="1260" cy="420" r="1.2" fill="#8fdfff"/>
+    <circle cx="1510" cy="260" r="1.5" fill="#fff"/>
+    <circle cx="1680" cy="620" r="1.2" fill="#fff"/>
+    <circle cx="260" cy="780" r="1.2" fill="#fff"/>
+    <circle cx="680" cy="850" r="1.5" fill="#8fdfff"/>
+    <circle cx="1350" cy="840" r="1.4" fill="#fff"/>
+  </g>
+  <circle cx="1050" cy="540" r="330" fill="none" stroke="#29b6ff" stroke-opacity=".16" stroke-width="2"/>
+  <circle cx="1050" cy="540" r="226" fill="none" stroke="#f6b84b" stroke-opacity=".16" stroke-width="2"/>
+  <path d="M420 600C610 410 810 390 1050 540S1450 720 1600 480" fill="none" stroke="#29b6ff" stroke-opacity=".38" stroke-width="2"/>
+  <path d="M520 340C730 470 820 630 1030 580S1350 280 1510 420" fill="none" stroke="#55d991" stroke-opacity=".28" stroke-width="2"/>
+  <g filter="url(#soft)" opacity=".45">
+    <circle cx="1120" cy="520" r="130" fill="#29b6ff"/>
+  </g>
+  <rect x="210" y="350" width="650" height="260" rx="14" fill="#0c1422" fill-opacity=".76" stroke="#29b6ff" stroke-opacity=".28"/>
+  <text x="260" y="430" fill="#29b6ff" font-family="Arial, Helvetica, sans-serif" font-size="28">AI SYSTEMS THESIS</text>
+  <text x="260" y="500" fill="#f8fbff" font-family="Arial, Helvetica, sans-serif" font-size="50" font-weight="700">Reliable agents</text>
+  <text x="260" y="565" fill="#c9d7e8" font-family="Arial, Helvetica, sans-serif" font-size="30">start with observability.</text>
+</svg>

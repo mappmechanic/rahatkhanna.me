@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 // Styles & Fonts
-import { inter } from "./fonts";
+import { bodyFont, displayFont, missionFont } from "./fonts";
 import "./globals.css";
 
 // Components
@@ -12,22 +12,62 @@ import { Footer } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
-  title:
-    "Unleash Your Potential with AI - Personal Growth and Tech Excellence by Rahat Khanna",
+  metadataBase: new URL("https://rahatkhanna.me"),
+  title: {
+    default: "Rahat Khanna | AI Agent Infrastructure",
+    template: "%s | Rahat Khanna",
+  },
   description:
-    "Explore Rahat's personal brand website to unlock your potential with cutting-edge AI insights, career guidance, and personal growth strategies. Discover how AI can empower you to achieve excellence in tech and beyond.",
-  themeColor: '#312e81',
+    "Rahat Khanna is a Staff Engineer building AI agent infrastructure, evaluation, observability, and governance systems for enterprise-ready autonomy.",
   manifest: '/manifest.json',
+  openGraph: {
+    title: "Rahat Khanna | AI Agent Infrastructure",
+    description:
+      "Staff Engineer focused on reliable AI agents, observability, evaluation, humanoids, space, and the future of autonomous systems.",
+    url: "https://rahatkhanna.me",
+    siteName: "Rahat Khanna",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rahat Khanna | AI Agent Infrastructure",
+    description:
+      "Reliable AI agents, observability, evaluation, and frontier autonomy.",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
     title: 'Rahat Khanna.me'
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    viewportFit: 'cover'
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: '#05070d',
+  colorScheme: "dark",
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover'
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Rahat Khanna",
+  url: "https://rahatkhanna.me",
+  jobTitle: "Staff Software Engineer",
+  sameAs: [
+    "https://linkedin.com/in/rahatkhanna",
+    "https://github.com/mappmechanic",
+    "https://x.com/mappmechanic",
+  ],
+  knowsAbout: [
+    "AI Agents",
+    "Agent Observability",
+    "LLM Evaluation",
+    "AI Infrastructure",
+    "Humanoids",
+    "Space Technology",
+  ],
 };
 
 export default function RootLayout({
@@ -36,18 +76,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <head>
         <link rel="icon" type="image/png" href="/favicon-48x48.png" sizes="48x48" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <meta name="apple-mobile-web-app-title" content="Rahat Khanna" />
         <link rel="manifest" href="/site.webmanifest" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
       </head>
-      <body className={`${inter.className} flex flex-col min-h-screen bg-default`}>
+      <body className={`${bodyFont.variable} ${displayFont.variable} ${missionFont.variable} flex min-h-screen flex-col bg-background`}>
         <Header />
-        <main className="flex-grow pb-16"> {/* Add padding to account for the fixed footer */}
+        <main className="flex-grow">
           {children}
         </main>
         <Footer />
