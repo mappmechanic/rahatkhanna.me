@@ -71,4 +71,6 @@ class DataLayer {
   }
 }
 
-export default new DataLayer();
+const dataLayer = new DataLayer();
+
+export default dataLayer;

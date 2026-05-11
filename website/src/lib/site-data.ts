@@ -157,7 +157,6 @@ export const navItems = [
   { label: "Speaking", href: "/speaking" },
   { label: "Vision", href: "/vision" },
   { label: "OS", href: "/os" },
-  { label: "AI Multiverse", href: "/ai-multiverse" },
 ];
 
 export const footerLinks = [

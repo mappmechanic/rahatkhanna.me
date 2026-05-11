@@ -13,6 +13,7 @@ This is the Next.js app for Rahat Khanna's public portfolio and future Personal 
 - `/speaking` - speaker positioning, topics, and inquiry call to action.
 - `/vision` - long-term thesis around agents, humanoids, space, and human potential.
 - `/os` - future Personal OS and AI agents mission-control concept page.
+- `/ai-multiverse` - legacy route that now redirects to `/os`; do not add it back to public navigation.
 
 ## Key Modules
 
@@ -23,6 +24,7 @@ This is the Next.js app for Rahat Khanna's public portfolio and future Personal 
 - `src/components/brand/unique-elements.tsx` - non-generic space and trajectory elements.
 - `src/components/brand/mission-control-kit.tsx` - interactive mission-control components.
 - `src/components/brand/motion-system.tsx` - reusable HUD transitions, card flips, loaders, and reveal patterns.
+- `src/components/brand/mission-page.tsx` - reusable page heroes, telemetry strips, mission rails, signal matrices, and command CTAs.
 - `src/components/brand/personal-os.tsx` - public/private/agents Personal OS components.
 - `public/motion/*` - current generated placeholder motion assets.
 
@@ -53,9 +55,6 @@ bunx next start -H 127.0.0.1
 
 ## Verification Notes
 
-The recent redesign passed typecheck, lint, and production build. Lint still reports two legacy warnings outside the new design-system work:
-
-- `src/components/layout/animated-landing-text.tsx` has a React hook dependency warning.
-- `src/lib/universes/data.ts` has an anonymous default export warning.
+The recent redesign passed typecheck, lint, and production build. The earlier legacy lint warnings in `src/components/layout/animated-landing-text.tsx` and `src/lib/universes/data.ts` have been cleaned up.
 
 Read the root `docs/` folder before changing the information architecture, design system, Personal OS concept, or AI-agent mission-control direction.

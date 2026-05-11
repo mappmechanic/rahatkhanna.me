@@ -37,6 +37,8 @@ The long-term brand combines AI agents, humanoids, space, mission-grade systems,
 - The website should later support public/private modes and AI agents dashboards.
 - The YouTube tutorial shared in planning is only a production technique reference. Do not embed that tutorial on the site.
 - A separate personal life-story YouTube video may be added later. Do not create `/journey` until the actual URL is provided.
+- AI Multiverse is retired from the external navigation. The legacy `/ai-multiverse` route redirects to `/os`.
+- Public pages should use the mission-page system: page heroes, telemetry strips, signal matrices, mission rails, command CTAs, HUD previews, and Personal OS surfaces.
 - Keep sensitive work sanitized. Public Apple/internal details should stay high-level.
 
 ## Current Implementation Map
@@ -63,6 +65,7 @@ Shared code:
 - `website/src/components/brand/unique-elements.tsx` - constellation, ribbon, and trajectory components.
 - `website/src/components/brand/mission-control-kit.tsx` - interactive mission-control system.
 - `website/src/components/brand/motion-system.tsx` - reusable motion variants, flip cards, loaders, and transitions.
+- `website/src/components/brand/mission-page.tsx` - reusable page heroes, telemetry strips, mission rails, signal matrices, and command CTAs.
 - `website/src/components/brand/personal-os.tsx` - future Personal OS components.
 - `website/src/components/landing/executive-landing-page.tsx` - homepage.
 
@@ -115,10 +118,7 @@ bun run lint
 bun run build
 ```
 
-Known legacy lint warnings from before the docs update:
-
-- React hook dependency warning in `src/components/layout/animated-landing-text.tsx`.
-- Anonymous default export warning in `src/lib/universes/data.ts`.
+The previous legacy lint warnings in `src/components/layout/animated-landing-text.tsx` and `src/lib/universes/data.ts` have been cleaned up.
 
 ## Working Style For Future Agents
 

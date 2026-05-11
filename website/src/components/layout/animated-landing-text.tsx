@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+const subtitles = ['AI Agents', 'Observability', 'Scale', 'Impact', 'You'];
+
 const AnimatedLandingText = () => {
   const [currentSubtitle, setCurrentSubtitle] = useState(0);
-  const subtitles = ['AI Agents', 'Observability', 'Scale', 'Impact', 'You'];
 
   useEffect(() => {
     const interval = setInterval(() => {

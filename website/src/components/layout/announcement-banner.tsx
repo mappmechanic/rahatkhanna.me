@@ -9,18 +9,15 @@ export function AnnouncementBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-purple-600 text-white shadow-lg">
-      <Link href="/ai-multiverse" className="block">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-space-panel text-white shadow-lg">
+      <Link href="/os" className="block">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex-1 text-center pr-8">
-            <span role="img" aria-label="sparkles" className="mr-2">
-              ✨
-            </span>
             <span className="font-medium">
-              Explore the AI Multiverse - Check out our new interactive AI tools guide!
+              Explore Rahat OS - the future public/private mission-control layer for work, life, and AI agents.
             </span>
             <span className="ml-2 inline-block font-bold">
-              Learn more →
+              Learn more
             </span>
           </div>
           <button

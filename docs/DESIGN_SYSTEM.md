@@ -81,6 +81,14 @@ Motion components:
 - `HudRevealTransitions` - subtle reveal patterns for future page sections.
 - `MotionSystemShowcase` - review surface for the design-system route.
 
+Page-system components:
+
+- `MissionPageHero` - first-screen page shell with telemetry and CTAs.
+- `TelemetryStrip` - compact mission metrics for page-level status.
+- `MissionRail` - angled progression bands for talks, essays, career arcs, shipped products, and stack layers.
+- `SignalMatrix` - non-generic signal grid for credibility, thesis, and operating metrics.
+- `CommandCTA` - HUD-style page action band.
+
 Personal OS components:
 
 - `PersonalOSConsole` - public/private/agents mode switcher and OS command surface.

@@ -66,6 +66,11 @@ Support this with:
 - Public/private/agents model.
 - Should feel like a credible product direction, not a finished claim.
 
+`/ai-multiverse`
+
+- Retired from external navigation.
+- Redirects to `/os` so old links do not expose the outdated AI-tools experience.
+
 `/journey`
 
 - Add only when Rahat provides the actual personal life-story YouTube video.

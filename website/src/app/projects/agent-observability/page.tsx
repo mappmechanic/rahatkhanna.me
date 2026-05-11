@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, CheckCircle2, GitBranch, ShieldAlert, Telescope } from "lucide-react";
+import { Activity, CheckCircle2, GitBranch, Gauge, LockKeyhole, ShieldAlert, Telescope } from "lucide-react";
 
+import { CommandCTA, MissionPageHero, MissionRail, SignalMatrix } from "@/components/brand/mission-page";
+import { MissionControlHud } from "@/components/brand/mission-control-kit";
+import { HudRevealTransitions } from "@/components/brand/motion-system";
 import { SectionShell, SignalBadge, SurfaceCard } from "@/components/brand/primitives";
+import { SignalRibbon } from "@/components/brand/unique-elements";
 
 export const metadata: Metadata = {
   title: "Agent Observability & Evaluation",
@@ -35,58 +38,104 @@ const stackLayers = [
   "Cost and latency monitoring",
 ];
 
+const caseMetrics = [
+  { label: "operating mode", value: "sanitized", tone: "signal" as const },
+  { label: "primary thesis", value: "trace first", tone: "mint" as const },
+  { label: "quality gate", value: "eval loop", tone: "ember" as const },
+  { label: "oversight", value: "human armed", tone: "signal" as const },
+];
+
+const outcomeSignals = [
+  {
+    label: "Task quality",
+    value: "Measurable",
+    detail: "Score task success, hallucination risk, tool precision, completion, and business outcome fit.",
+    icon: Gauge,
+    tone: "signal" as const,
+  },
+  {
+    label: "Execution path",
+    value: "Replayable",
+    detail: "Inspect plans, tool calls, memory usage, policy decisions, retries, and escalations.",
+    icon: Activity,
+    tone: "mint" as const,
+  },
+  {
+    label: "Policy surface",
+    value: "Constrained",
+    detail: "Keep secrets, costs, external actions, and high-risk tools behind explicit guardrails.",
+    icon: LockKeyhole,
+    tone: "ember" as const,
+  },
+  {
+    label: "Human control",
+    value: "Escalatable",
+    detail: "Design oversight as a core product surface instead of an exception path.",
+    icon: CheckCircle2,
+    tone: "mint" as const,
+  },
+];
+
 export default function AgentObservabilityPage() {
   return (
-    <div className="space-field min-h-screen pt-24">
-      <SectionShell
-        eyebrow="Sanitized case study"
-        title="Agent Observability & Evaluation Platform"
-        intro="A public-safe breakdown of the systems thinking behind production agent reliability. No proprietary Apple implementation details are disclosed."
+    <div className="space-field min-h-screen">
+      <MissionPageHero
+        eyebrow="Sanitized case study / AI agent infrastructure"
+        title="Agent observability is the cockpit for enterprise autonomy."
+        intro="A public-safe breakdown of how to make production agents measurable, inspectable, governable, and ready for human oversight. No proprietary Apple implementation details are disclosed."
+        metrics={caseMetrics}
+        primaryCta={{ label: "Use as talk foundation", href: "/speaking" }}
+        secondaryCta={{ label: "Back to projects", href: "/projects" }}
       >
-        <div className="grid gap-5 lg:grid-cols-[1fr_.8fr]">
-          <SurfaceCard>
-            <SignalBadge>Problem</SignalBadge>
-            <h2 className="mt-5 text-3xl font-semibold text-white">Agents fail in ways traditional software dashboards cannot explain.</h2>
-            <p className="mt-5 text-base leading-8 text-slate-300">
-              Long-horizon agents need inspection across plans, tool calls, intermediate reasoning artifacts, constraints, escalations, cost, latency, and final task quality. The core challenge is turning messy autonomous behavior into reliable operational signals.
-            </p>
-          </SurfaceCard>
-          <SurfaceCard>
-            <SignalBadge>Outcome pattern</SignalBadge>
-            <div className="mt-6 grid gap-3">
-              {["Measurable task success", "Replayable execution graphs", "LLM quality scoring", "Human-in-the-loop oversight", "Policy-aware tool boundaries"].map((item) => (
-                <div key={item} className="flex gap-3 rounded-md border border-space-line/25 bg-black/20 p-4">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-space-mint" />
-                  <span className="text-sm leading-6 text-slate-200">{item}</span>
-                </div>
-              ))}
-            </div>
-          </SurfaceCard>
-        </div>
+        <SurfaceCard>
+          <SignalBadge>Core problem</SignalBadge>
+          <h2 className="mt-5 text-3xl font-semibold text-white">Agents fail in ways traditional software dashboards cannot explain.</h2>
+          <p className="mt-5 text-base leading-8 text-slate-300">
+            Long-horizon agents need inspection across plans, tool calls, intermediate reasoning artifacts, constraints, escalations, cost, latency, and final task quality. The challenge is turning messy autonomous behavior into reliable operational signals.
+          </p>
+        </SurfaceCard>
+      </MissionPageHero>
+
+      <SectionShell
+        eyebrow="Outcome pattern"
+        title="The case study is built around operational proof."
+        intro="Instead of describing features, the page exposes the mission signals an executive, lab, or conference organizer would expect to see."
+      >
+        <SignalMatrix items={outcomeSignals} />
+        <SignalRibbon items={["Trace replay", "LLM-as-Judge", "Tool precision", "Human escalation", "Cost visibility"]} />
+      </SectionShell>
+
+      <SectionShell title="Mission Control Pattern" intro="The design-system HUD becomes the visual metaphor for the actual architecture: observe, evaluate, constrain, escalate." className="bg-black/20">
+        <MissionControlHud />
       </SectionShell>
 
       <SectionShell title="Reference Architecture" intro="This is intentionally abstract. It explains the shape of the reliability system without revealing internal services, data, or implementation specifics." className="bg-black/20">
-        <SurfaceCard>
-          <div className="grid gap-4 md:grid-cols-4">
-            {stackLayers.map((layer, index) => (
-              <div key={layer} className="relative rounded-md border border-space-line/25 bg-black/20 p-4">
-                <p className="text-sm text-space-signal">Layer {index + 1}</p>
-                <h2 className="mt-3 text-base font-semibold text-white">{layer}</h2>
-              </div>
-            ))}
-          </div>
-        </SurfaceCard>
+        <MissionRail
+          stagger={false}
+          items={stackLayers.map((layer, index) => ({
+            label: `STACK-${String(index + 1).padStart(2, "0")}`,
+            title: layer,
+            body:
+              index < 2
+                ? "Capture raw behavior before summarizing it. Agent systems need durable evidence for what happened."
+                : index < 5
+                  ? "Transform events into interpretable traces, evaluation scores, and reliability signals."
+                  : "Close the loop with review queues, policy control, and operating metrics leaders can trust.",
+          }))}
+        />
       </SectionShell>
 
       <SectionShell title="Decision Log" intro="This is the Staff+ layer: not just what was built, but which tradeoffs mattered.">
-        <div className="grid gap-5 md:grid-cols-3">
-          {decisionLog.map((decision) => (
-            <SurfaceCard key={decision.title}>
-              <GitBranch className="mb-5 h-7 w-7 text-space-signal" />
-              <h2 className="text-xl font-semibold text-white">{decision.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-300">{decision.body}</p>
-            </SurfaceCard>
-          ))}
+        <MissionRail
+          items={decisionLog.map((decision, index) => ({
+            label: `DECISION-0${index + 1}`,
+            title: decision.title,
+            body: decision.body,
+            meta: "architecture tradeoff",
+          }))}
+        />
+        <div className="mt-8">
+          <HudRevealTransitions />
         </div>
       </SectionShell>
 
@@ -107,10 +156,20 @@ export default function AgentObservabilityPage() {
             </p>
           </SurfaceCard>
         </div>
-        <Link href="/speaking" className="mt-8 inline-flex items-center gap-2 rounded-md bg-space-signal px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300">
-          Turn this into a talk <ArrowRight className="h-4 w-4" />
-        </Link>
       </SectionShell>
+
+      <CommandCTA
+        label="NEXT ACTION / SPEAKING"
+        title="Turn this case study into a conference talk."
+        body="The public story is strong because it has both technical depth and executive relevance: how to move from impressive agent demos to inspected, evaluated, governed production systems."
+        href="/speaking"
+        action="Open speaking page"
+      >
+        <div className="flex items-center gap-3 text-sm text-slate-300">
+          <GitBranch className="h-4 w-4 text-space-signal" />
+          Decision logs, reference architecture, and privacy boundary are ready to become a talk track.
+        </div>
+      </CommandCTA>
     </div>
   );
 }

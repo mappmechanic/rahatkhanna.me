@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { BrainCircuit, Cpu, Orbit, Rocket } from "lucide-react";
 
-import { SectionShell, SurfaceCard } from "@/components/brand/primitives";
-import { visionSignals } from "@/lib/site-data";
+import { CommandCTA, MissionPageHero, MissionRail, SignalMatrix } from "@/components/brand/mission-page";
+import { HudRevealTransitions } from "@/components/brand/motion-system";
+import { SectionShell, SignalBadge } from "@/components/brand/primitives";
+import { AutonomyConstellation, SignalRibbon } from "@/components/brand/unique-elements";
+import { thesisCards, visionSignals } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Vision",
@@ -29,37 +31,96 @@ const theses = [
   },
 ];
 
+const visionMetrics = [
+  { label: "time horizon", value: "10 years", tone: "signal" as const },
+  { label: "domains", value: "agents + robots + space", tone: "mint" as const },
+  { label: "core constraint", value: "trust", tone: "ember" as const },
+  { label: "human goal", value: "leverage", tone: "signal" as const },
+];
+
+const visionArcs = [
+  {
+    label: "ARC-01 / DIGITAL",
+    value: "AI agents",
+    detail: "Digital autonomy teaches the infrastructure pattern first: traces, evals, memory, tool policy, and human escalation.",
+    icon: BrainCircuit,
+    tone: "signal" as const,
+  },
+  {
+    label: "ARC-02 / EMBODIED",
+    value: "Humanoids",
+    detail: "Physical-world autonomy raises the stakes: intent, fleet learning, policy, safety, and operator override.",
+    icon: Cpu,
+    tone: "mint" as const,
+  },
+  {
+    label: "ARC-03 / MISSION",
+    value: "Space systems",
+    detail: "Delayed feedback turns reliability into survival: resilient plans, audit trails, fallback paths, and mission assurance.",
+    icon: Orbit,
+    tone: "ember" as const,
+  },
+  {
+    label: "ARC-04 / HUMAN",
+    value: "Potential",
+    detail: "The point is not machines for their own sake; it is human leverage, reinvention, and ambition becoming more accessible.",
+    icon: Rocket,
+    tone: "signal" as const,
+  },
+];
+
 export default function VisionPage() {
   return (
-    <div className="space-field min-h-screen pt-24">
+    <div className="space-field min-h-screen">
+      <MissionPageHero
+        eyebrow="Long-term vision / autonomy stack"
+        title="Agents, humanoids, space, and the reliability stack for useful autonomy."
+        intro="This page frames the long arc of the portfolio. The same primitives that make enterprise agents trustworthy will matter for embodied systems, mission environments, and human potential."
+        metrics={visionMetrics}
+        primaryCta={{ label: "Turn into essays", href: "/writing" }}
+        secondaryCta={{ label: "Explore Rahat OS", href: "/os" }}
+      />
+
       <SectionShell
-        eyebrow="Long-term vision"
-        title="Agents, humanoids, space, and the reliability stack for autonomy."
-        intro="This page frames the long arc of the portfolio. The same primitives that make enterprise agents trustworthy will matter for embodied and mission-grade systems."
+        eyebrow="Constellation thesis"
+        title="A worldview built from connected operating constraints."
+        intro="Agents, humanoids, and space are not three random interests. They are progressively harder versions of the same autonomy problem."
       >
-        <div className="grid gap-5 md:grid-cols-5">
-          {visionSignals.map(({ title, icon: Icon }) => (
-            <SurfaceCard key={title} className="text-center">
-              <Icon className="mx-auto mb-4 h-7 w-7 text-space-signal" />
-              <h2 className="text-base font-semibold text-white">{title}</h2>
-            </SurfaceCard>
-          ))}
-        </div>
+        <AutonomyConstellation items={thesisCards} />
+      </SectionShell>
+
+      <SectionShell title="Vision Arcs" intro="Each arc can become an essay, keynote, case study, or product direction over time." className="bg-black/20">
+        <SignalMatrix items={visionArcs} />
+        <SignalRibbon items={visionSignals.map((signal) => signal.title)} />
       </SectionShell>
 
       <SectionShell title="Core Thesis" intro="A first draft of the public worldview that can later become essays, talks, and keynote material." className="bg-black/20">
-        <div className="grid gap-5 md:grid-cols-2">
-          {theses.map((thesis) => (
-            <SurfaceCard key={thesis.title}>
-              <h2 className="text-2xl font-semibold text-white">{thesis.title}</h2>
-              <p className="mt-4 text-sm leading-7 text-slate-300">{thesis.body}</p>
-            </SurfaceCard>
+        <MissionRail
+          items={theses.map((thesis, index) => ({
+            label: `THESIS-0${index + 1}`,
+            title: thesis.title,
+            body: thesis.body,
+            meta: index === 3 ? "human mission" : "systems thesis",
+          }))}
+        />
+        <div className="mt-8">
+          <HudRevealTransitions />
+        </div>
+      </SectionShell>
+
+      <CommandCTA
+        label="NEXT ACTION / THOUGHT LEADERSHIP"
+        title="Shape the vision into public authority."
+        body="The vision page is the thesis spine for essays, talks, and future OS modules. Every new artifact should either prove the reliability stack or make the human mission more concrete."
+        href="/writing"
+        action="Open writing hub"
+      >
+        <div className="flex flex-wrap gap-2">
+          {["Agents", "Humanoids", "Space", "Human potential"].map((tag) => (
+            <SignalBadge key={tag}>{tag}</SignalBadge>
           ))}
         </div>
-        <Link href="/writing" className="mt-8 inline-flex items-center gap-2 rounded-md bg-space-signal px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-300">
-          Turn vision into essays <ArrowRight className="h-4 w-4" />
-        </Link>
-      </SectionShell>
+      </CommandCTA>
     </div>
   );
 }
