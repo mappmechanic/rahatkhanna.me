@@ -13,6 +13,16 @@ import { designTokens, motionStates, thesisCards } from "@/lib/site-data";
 export const metadata: Metadata = {
   title: "Design System",
   description: "Interactive design system for Rahat Khanna's AI executive portfolio redesign.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function DesignSystemPage() {

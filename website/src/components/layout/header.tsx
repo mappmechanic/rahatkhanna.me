@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
-import { navItems } from "@/lib/site-data";
+import { contactChannels, navItems } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -60,7 +60,7 @@ export function Header() {
         </div>
 
         <a
-          href="mailto:hello@rahatkhanna.me"
+          href={contactChannels.generalHref}
           className="hidden rounded-md bg-space-signal px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-sky-300 md:inline-flex"
         >
           Contact
@@ -94,7 +94,7 @@ export function Header() {
               </Link>
             ))}
             <a
-              href="mailto:hello@rahatkhanna.me"
+              href={contactChannels.generalHref}
               className="mt-2 rounded-md bg-space-signal px-3 py-3 text-center text-sm font-semibold text-slate-950"
             >
               Contact

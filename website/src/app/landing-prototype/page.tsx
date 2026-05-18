@@ -7,6 +7,16 @@ import { SpaceMotionScene } from "@/components/brand/space-motion-scene";
 export const metadata: Metadata = {
   title: "Animated Landing Prototype",
   description: "Scroll-scrubbed animated landing-page prototype for Rahat Khanna's AI executive portfolio.",
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      noimageindex: true,
+    },
+  },
 };
 
 export default function LandingPrototypePage() {

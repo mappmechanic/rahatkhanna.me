@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { footerLinks } from "@/lib/site-data";
+import { footerLinks, publicSafetyNote } from "@/lib/site-data";
 
 export function Footer() {
   return (
@@ -9,6 +9,7 @@ export function Footer() {
         <div>
           <Link href="/" className="text-sm font-semibold text-white">Rahat Khanna</Link>
           <p className="mt-2 text-sm text-slate-400">AI agent infrastructure, executive systems thinking, and frontier autonomy.</p>
+          <p className="mt-3 max-w-2xl text-xs leading-5 text-slate-500">{publicSafetyNote}</p>
         </div>
         <div className="flex flex-wrap gap-3">
           {footerLinks.map((link) => (

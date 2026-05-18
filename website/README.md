@@ -5,15 +5,15 @@ This is the Next.js app for Rahat Khanna's public portfolio and future Personal 
 ## Routes
 
 - `/` - executive AI landing page.
-- `/design-system` - living review surface for tokens, components, motion, mission-control UI, and Personal OS patterns.
-- `/landing-prototype` - scroll-scrubbed animated hero prototype.
+- `/design-system` - noindexed review surface for tokens, components, motion, mission-control UI, and Personal OS patterns.
+- `/landing-prototype` - noindexed scroll-scrubbed animated hero prototype.
 - `/projects` - sanitized project/case-study index.
 - `/projects/agent-observability` - flagship case study for agent evaluation and observability.
-- `/writing` - essay/thought-leadership index.
+- `/writing` - redirects to `/vision#writing`; writing currently lives inside Vision.
 - `/speaking` - speaker positioning, topics, and inquiry call to action.
 - `/vision` - long-term thesis around agents, humanoids, space, and human potential.
-- `/os` - future Personal OS and AI agents mission-control concept page.
-- `/ai-multiverse` - legacy route that now redirects to `/os`; do not add it back to public navigation.
+- `/os` - redirects to `/vision#rahat-os`; Rahat OS is a future-direction section inside Vision.
+- `/ai-multiverse` - legacy route that now redirects to `/vision#rahat-os`; do not add it back to public navigation.
 
 ## Key Modules
 
@@ -55,6 +55,6 @@ bunx next start -H 127.0.0.1
 
 ## Verification Notes
 
-The recent redesign passed typecheck, lint, and production build. The earlier legacy lint warnings in `src/components/layout/animated-landing-text.tsx` and `src/lib/universes/data.ts` have been cleaned up.
+The recent redesign passed typecheck, lint, and production build. The old AI Multiverse API/data surface, Firebase contact API, and legacy landing-page components have been removed from the release branch.
 
 Read the root `docs/` folder before changing the information architecture, design system, Personal OS concept, or AI-agent mission-control direction.

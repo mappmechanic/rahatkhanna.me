@@ -37,13 +37,23 @@ The long-term brand combines AI agents, humanoids, space, mission-grade systems,
 - The website should later support public/private modes and AI agents dashboards.
 - The YouTube tutorial shared in planning is only a production technique reference. Do not embed that tutorial on the site.
 - A separate personal life-story YouTube video may be added later. Do not create `/journey` until the actual URL is provided.
-- AI Multiverse is retired from the external navigation. The legacy `/ai-multiverse` route redirects to `/os`.
+- AI Multiverse is retired from the external navigation. The legacy `/ai-multiverse` route redirects to `/vision#rahat-os`.
 - Public pages should use the mission-page system: page heroes, telemetry strips, signal matrices, mission rails, command CTAs, HUD previews, and Personal OS surfaces.
+- Do not put design-system showcases, implementation notes, fake live telemetry, or component-demo language on external-facing pages. Keep those inside `/design-system` or `/landing-prototype`.
+- `/design-system` and `/landing-prototype` are intentionally noindexed review/prototype routes.
+- `Writing` and `OS` are no longer top-level public nav tabs. Writing belongs inside `/vision#writing`; Rahat OS belongs inside `/vision#rahat-os` as a future direction, not a standalone public product claim.
+- Real public profile highlights should stay visible: YEH Technologies, instantPay, Genpact, Flipkart, Apple platforms, AI agent infrastructure, and mentorship.
 - Keep sensitive work sanitized. Public Apple/internal details should stay high-level.
+- The old AI Multiverse API/data surface and old Firebase contact API were removed from the release branch.
 
 ## Current Implementation Map
 
 App root: `website/`
+
+Release gate:
+
+- `docs/PRE_RELEASE_AUDIT.md` - critique, blockers, and enhancement plan before merging this redesign to `main`.
+- `docs/RAHAT_DATA_NEEDED.md` - facts/assets Rahat must provide before future agents publish them.
 
 Core routes:
 
@@ -52,10 +62,10 @@ Core routes:
 - `/landing-prototype` - animated hero prototype.
 - `/projects` - sanitized case-study index.
 - `/projects/agent-observability` - flagship sanitized case study.
-- `/writing` - thought-leadership index.
+- `/writing` - redirects to `/vision#writing`.
 - `/speaking` - speaking page.
 - `/vision` - long-term thesis page.
-- `/os` - Personal OS vision page.
+- `/os` - redirects to `/vision#rahat-os`.
 
 Shared code:
 
@@ -118,7 +128,7 @@ bun run lint
 bun run build
 ```
 
-The previous legacy lint warnings in `src/components/layout/animated-landing-text.tsx` and `src/lib/universes/data.ts` have been cleaned up.
+The previous legacy lint-warning files were removed with the retired landing page and AI Multiverse data surface.
 
 ## Working Style For Future Agents
 

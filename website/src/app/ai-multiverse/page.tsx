@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function AIMultiverseRedirect() {
-  redirect("/os");
+  redirect("/vision#rahat-os");
 }

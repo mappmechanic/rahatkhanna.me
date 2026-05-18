@@ -51,10 +51,10 @@ const modes: Array<{
 ];
 
 const publicSignals = [
-  { label: "essay pipeline", value: "5 drafts" },
-  { label: "talk topics", value: "3 ready" },
+  { label: "essay pipeline", value: "planned" },
+  { label: "talk topics", value: "active" },
   { label: "mentorship loop", value: "active" },
-  { label: "public artifacts", value: "growing" },
+  { label: "public artifacts", value: "curated" },
 ];
 
 const privateSignals = [
@@ -65,10 +65,10 @@ const privateSignals = [
 ];
 
 const agentSignals = [
-  { label: "agent runs", value: "12 queued" },
-  { label: "eval gates", value: "armed" },
-  { label: "memory sync", value: "warm" },
-  { label: "escalations", value: "2 review" },
+  { label: "agent runs", value: "future" },
+  { label: "eval gates", value: "planned" },
+  { label: "memory sync", value: "designed" },
+  { label: "escalations", value: "human review" },
 ];
 
 const orbitNodes = [

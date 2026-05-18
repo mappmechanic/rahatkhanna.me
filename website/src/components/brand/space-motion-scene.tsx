@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import type { ComponentType } from "react";
 import Link from "next/link";
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring, useTransform } from "framer-motion";
-import { ArrowRight, Gauge, PauseCircle, PlayCircle, Radar, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, Code2, Database, Fingerprint, Network, PauseCircle, PlayCircle, Radar, Workflow } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -13,10 +14,10 @@ type SpaceMotionSceneProps = {
   showCopy?: boolean;
 };
 
-type StackReadout = {
+type StackLayer = {
   label: string;
-  value: string;
-  icon: typeof Gauge;
+  items: string[];
+  icon: ComponentType<{ className?: string }>;
 };
 
 const nodes = [
@@ -28,10 +29,48 @@ const nodes = [
   { label: "Space", x: "83%", y: "39%" },
 ];
 
-const stackReadouts: StackReadout[] = [
-  { label: "Trace quality", value: "97%", icon: Gauge },
-  { label: "Tool-call precision", value: "high", icon: ShieldCheck },
-  { label: "Human escalation", value: "ready", icon: PlayCircle },
+const reliabilityLoop = [
+  "Trace every run",
+  "Evaluate every outcome",
+  "Govern every tool",
+  "Escalate to humans",
+  "Monitor cost and latency",
+  "Learn from failures",
+];
+
+const currentStackLayers: StackLayer[] = [
+  {
+    label: "Runtime",
+    icon: Code2,
+    items: ["Python", "TypeScript", "Claude Agents", "Codex Agents", "Google Agents & ADK"],
+  },
+  {
+    label: "Agent interface",
+    icon: Network,
+    items: ["Agent Skills", "MCPs", "Generative UI"],
+  },
+  {
+    label: "Trust layer",
+    icon: Fingerprint,
+    items: ["Agent Identity/Security", "LangChain"],
+  },
+  {
+    label: "Infra + evals",
+    icon: Workflow,
+    items: ["Anyscale Ray", "Weights & Biases", "Braintrust", "LangSmith"],
+  },
+  {
+    label: "Data plane",
+    icon: Database,
+    items: ["ClickHouse", "Spark", "Airflow", "Data Analytics"],
+  },
+];
+
+const heroProofs = [
+  { label: "Role", value: "Staff Software Engineer", detail: "AI agent infrastructure" },
+  { label: "Systems", value: "Evaluation + observability", detail: "Reliable enterprise agents" },
+  { label: "Scale", value: "Apple-scale platforms", detail: "Media, ads, commerce web systems" },
+  { label: "Founder", value: "300+ builds / 100M+ txns", detail: "Founder and CTO roots" },
 ];
 
 export function SpaceMotionScene({ mode = "hero", className, showCopy = true }: SpaceMotionSceneProps) {
@@ -48,7 +87,11 @@ export function SpaceMotionScene({ mode = "hero", className, showCopy = true }: 
   });
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 70, damping: 24, mass: 0.35 });
   const haloOpacity = useTransform(smoothProgress, [0, 0.55, 1], [0.12, 0.32, 0.2]);
-  const commandOpacity = useTransform(smoothProgress, [0.1, 0.58, 1], [0.1, 0.75, 1]);
+  const commandOpacity = useTransform(
+    smoothProgress,
+    [0.1, 0.58, 1],
+    mode === "hero" ? [0.05, 0.16, 0.24] : [0.1, 0.75, 1],
+  );
   const orbitRotate = useTransform(smoothProgress, [0, 1], [0, 34]);
   const copyY = useTransform(smoothProgress, [0, 0.6, 1], [0, -18, -28]);
 
@@ -73,7 +116,8 @@ export function SpaceMotionScene({ mode = "hero", className, showCopy = true }: 
   }, [isPlayingFallback, mode, reducedMotion]);
 
   const isPanel = mode === "panel";
-  const minHeight = mode === "prototype" ? "min-h-[220vh]" : mode === "hero" ? "min-h-[160vh]" : "min-h-[620px]";
+  const showMotionAsset = mode !== "hero";
+  const minHeight = mode === "prototype" ? "min-h-[220vh]" : mode === "hero" ? "min-h-[140vh]" : "min-h-[620px]";
   const stickyClass = isPanel ? "relative min-h-[620px]" : "sticky top-0 min-h-screen";
 
   return (
@@ -90,21 +134,23 @@ export function SpaceMotionScene({ mode = "hero", className, showCopy = true }: 
           className="absolute right-[-8rem] top-[8%] h-[46rem] w-[46rem] rounded-full border border-space-ember/30"
         />
 
-        <video
-          ref={videoRef}
-          className={cn(
-            "absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-screen",
-            reducedMotion || videoFailed ? "hidden" : "block"
-          )}
-          muted
-          playsInline
-          preload="metadata"
-          poster="/motion/rahat-ai-systems-start.svg"
-          onLoadedMetadata={() => setVideoReady(true)}
-          onError={() => setVideoFailed(true)}
-        >
-          <source src="/motion/rahat-ai-systems-reveal.mp4" type="video/mp4" />
-        </video>
+        {showMotionAsset ? (
+          <video
+            ref={videoRef}
+            className={cn(
+              "absolute inset-0 h-full w-full object-cover opacity-45 mix-blend-screen",
+              reducedMotion || videoFailed ? "hidden" : "block",
+            )}
+            muted
+            playsInline
+            preload="metadata"
+            poster="/motion/rahat-ai-systems-start.svg"
+            onLoadedMetadata={() => setVideoReady(true)}
+            onError={() => setVideoFailed(true)}
+          >
+            <source src="/motion/rahat-ai-systems-reveal.mp4" type="video/mp4" />
+          </video>
+        ) : null}
 
         <motion.div style={{ opacity: commandOpacity }} className="absolute inset-0">
           {nodes.map((node, index) => (
@@ -136,8 +182,17 @@ export function SpaceMotionScene({ mode = "hero", className, showCopy = true }: 
                 I build the infrastructure that makes AI agents reliable, observable, and enterprise-ready.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-                Staff engineer at Apple, founder by origin, now focused on the reliability stack for agents, humanoids, and space-grade autonomy.
+                Staff Software Engineer with Apple-scale platform experience, founder roots, and a current focus on the reliability stack for agents, humanoids, and space-grade autonomy.
               </p>
+              <div className="mt-6 grid max-w-3xl gap-3 sm:grid-cols-2">
+                {heroProofs.map((proof) => (
+                  <div key={proof.label} className="mission-node border border-space-line/25 bg-black/25 px-4 py-3 backdrop-blur-sm">
+                    <p className="font-mission text-xs uppercase tracking-normal text-space-signal">{proof.label}</p>
+                    <p className="mt-1 text-sm font-semibold text-white">{proof.value}</p>
+                    <p className="mt-1 text-xs leading-5 text-slate-400">{proof.detail}</p>
+                  </div>
+                ))}
+              </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Link
                   href="/projects/agent-observability"
@@ -160,41 +215,77 @@ export function SpaceMotionScene({ mode = "hero", className, showCopy = true }: 
             <div className="relative flex h-full flex-col justify-between">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="text-sm text-space-signal">Autonomy command surface</p>
+                  <p className="text-sm text-space-signal">Current build surface</p>
                   <h2 className="mt-2 text-2xl font-semibold text-white">Agent Reliability Stack</h2>
+                  <p className="mt-3 max-w-xl text-sm leading-6 text-slate-300">
+                    The public focus stack behind my thesis: build agents with modern frameworks, then make them inspectable, governed, and measurable.
+                  </p>
                 </div>
                 <Radar className="h-9 w-9 text-space-signal" />
               </div>
-              <div className="grid gap-3 py-8">
-                {stackReadouts.map(({ label, value, icon: Icon }) => (
-                  <div key={label} className="flex items-center justify-between rounded-md border border-space-line/25 bg-black/20 p-4">
-                    <div className="flex items-center gap-3">
-                      <Icon className="h-5 w-5 text-space-mint" />
-                      <span className="text-sm text-slate-200">{label}</span>
-                    </div>
-                    <span className="text-sm font-semibold text-white">{value}</span>
+
+              <div className="grid gap-5 py-8">
+                <div>
+                  <p className="font-mission mb-3 text-xs uppercase tracking-normal text-space-ember">Operating loop</p>
+                  <div className="grid gap-2 sm:grid-cols-2">
+                    {reliabilityLoop.map((item) => (
+                      <div key={item} className="flex items-center gap-2 rounded-md border border-space-line/20 bg-black/20 px-3 py-2">
+                        <CheckCircle2 className="h-4 w-4 shrink-0 text-space-mint" />
+                        <span className="text-xs text-slate-200">{item}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-              <div className="rounded-md border border-space-line/25 bg-black/20 p-4">
-                <div className="mb-3 flex items-center justify-between">
-                  <span className="text-sm text-slate-300">Scroll-linked motion asset</span>
-                  <span className="text-sm text-space-ember">{reducedMotion ? "reduced motion" : videoReady && !videoFailed ? "video ready" : "poster fallback"}</span>
                 </div>
-                <div className="h-2 rounded-full bg-slate-800">
-                  <motion.div style={{ scaleX: smoothProgress }} className="h-2 origin-left rounded-full bg-space-signal" />
+
+                <div>
+                  <p className="font-mission mb-3 text-xs uppercase tracking-normal text-space-signal">Working stack</p>
+                  <div className="grid gap-3 lg:grid-cols-2">
+                    {currentStackLayers.map(({ label, items, icon: Icon }) => (
+                      <div key={label} className="mission-node border border-space-line/25 bg-black/20 p-4">
+                        <div className="mb-3 flex items-center gap-2">
+                          <Icon className="h-4 w-4 text-space-signal" />
+                          <p className="font-mission text-xs text-space-signal">{label}</p>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {items.map((item) => (
+                            <span key={item} className="rounded-full border border-space-line/25 bg-space-panel/60 px-2.5 py-1 text-xs text-slate-200">
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                {isPanel && !reducedMotion ? (
-                  <button
-                    type="button"
-                    onClick={() => setIsPlayingFallback((current) => !current)}
-                    className="mt-4 inline-flex items-center gap-2 rounded-md border border-space-line/40 px-3 py-2 text-sm text-white transition hover:border-space-signal"
-                  >
-                    {isPlayingFallback ? <PauseCircle className="h-4 w-4" /> : <PlayCircle className="h-4 w-4" />}
-                    {isPlayingFallback ? "Pause panel video" : "Play panel video"}
-                  </button>
-                ) : null}
               </div>
+
+              {isPanel ? (
+                <div className="rounded-md border border-space-line/25 bg-black/20 p-4">
+                  <div className="mb-3 flex items-center justify-between">
+                    <span className="text-sm text-slate-300">Motion lab asset</span>
+                    <span className="text-sm text-space-ember">
+                      {reducedMotion
+                        ? "reduced motion"
+                        : videoReady && !videoFailed
+                          ? "video ready"
+                          : "poster fallback"}
+                    </span>
+                  </div>
+                  <div className="h-2 rounded-full bg-slate-800">
+                    <motion.div style={{ scaleX: smoothProgress }} className="h-2 origin-left rounded-full bg-space-signal" />
+                  </div>
+                  {!reducedMotion ? (
+                    <button
+                      type="button"
+                      onClick={() => setIsPlayingFallback((current) => !current)}
+                      className="mt-4 inline-flex items-center gap-2 rounded-md border border-space-line/40 px-3 py-2 text-sm text-white transition hover:border-space-signal"
+                    >
+                      {isPlayingFallback ? <PauseCircle className="h-4 w-4" /> : <PlayCircle className="h-4 w-4" />}
+                      {isPlayingFallback ? "Pause panel video" : "Play panel video"}
+                    </button>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

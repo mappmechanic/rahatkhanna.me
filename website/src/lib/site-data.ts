@@ -19,11 +19,18 @@ export const sitePrinciples = [
 
 export const metrics = [
   { value: "14+", label: "years building software at scale" },
-  { value: "Staff", label: "AI infrastructure engineer at Apple" },
+  { value: "Staff", label: "software engineer focused on AI agent infrastructure" },
   { value: "300+", label: "products built as founder and CTO" },
   { value: "100M+", label: "annual transactions in early fintech infrastructure" },
   { value: "40+", label: "technologists mentored through the AI shift" },
 ];
+
+export const contactChannels = {
+  generalEmail: "hello@rahatkhanna.me",
+  generalHref: "mailto:hello@rahatkhanna.me",
+  speakingEmail: "yehtechnologies@gmail.com",
+  speakingHref: "mailto:yehtechnologies@gmail.com?subject=Speaking%20Invitation",
+};
 
 export const thesisCards = [
   {
@@ -70,12 +77,57 @@ export const careerArc = [
   },
 ];
 
+export const profileHighlights = [
+  {
+    years: "2008 - 2012",
+    label: "FOUNDER ROOTS / YEH TECHNOLOGIES",
+    title: "Built 300+ websites and enterprise apps for global clients.",
+    body: "The early chapter was hands-on founder work: selling, designing, shipping, and learning how real customers judge software.",
+    meta: "entrepreneurship",
+  },
+  {
+    years: "2011 - 2012",
+    label: "FINTECH SCALE / INSTANTPAY",
+    title: "Architected infrastructure processing 100M+ annual transactions.",
+    body: "Led the technology foundation for a multi-service fintech platform where reliability, throughput, and operator trust mattered every day.",
+    meta: "CTO experience",
+  },
+  {
+    years: "2012 - 2017",
+    label: "ENTERPRISE + COMMERCE / GENPACT, FLIPKART",
+    title: "Built mobile, healthcare, and ecommerce systems used by thousands.",
+    body: "Moved from enterprise transformation into Flipkart-scale commerce, including operator workflows and customer-facing post-order experiences.",
+    meta: "platform builder",
+  },
+  {
+    years: "2017 - 2023",
+    label: "APPLE SCALE / ADS AND MEDIA PRODUCTS",
+    title: "Led web systems across Apple Ads, Music, TV, Podcasts, Books, and editorial launches.",
+    body: "This chapter proves product judgment at global scale: high-visibility consumer experiences, business tools, and cross-functional platform delivery.",
+    meta: "Staff engineer trajectory",
+  },
+  {
+    years: "2023 - now",
+    label: "AI INFRASTRUCTURE / NOW",
+    title: "Focused on agent observability, evaluation, guardrails, and enterprise-ready autonomy.",
+    body: "The current chapter connects everything before it: systems thinking, product taste, scale, and the reliability stack for AI agents.",
+    meta: "post-AI world",
+  },
+  {
+    years: "2023 - now",
+    label: "MENTORSHIP / HUMAN IMPACT",
+    title: "Mentored 40+ engineers and professionals through the AI shift.",
+    body: "The public mission is not only technical credibility. It is helping younger technologists see a bigger path for themselves.",
+    meta: "impact",
+  },
+];
+
 export const systems = [
   {
     title: "Agent Observability & Evaluation",
     href: "/projects/agent-observability",
     label: "Flagship case study",
-    body: "A public-safe walkthrough of how to make agents measurable: traces, task success, hallucination checks, tool precision, and human escalation.",
+    body: "A practical walkthrough of how to make agents measurable: traces, task success, hallucination checks, tool precision, and human escalation.",
     icon: LineChart,
     tags: ["LLM-as-Judge", "Tracing", "Reliability", "Governance"],
   },
@@ -91,7 +143,7 @@ export const systems = [
     title: "Apple-Scale Web Platforms",
     href: "/projects",
     label: "Pre-AI credibility",
-    body: "The product-scale foundation behind the AI chapter: media, ads, commerce, internal platforms, and operator workflows.",
+    body: "The product-scale foundation behind the AI chapter: media, ads, commerce, platform systems, and operator workflows.",
     icon: Sparkles,
     tags: ["React", "TypeScript", "Platform", "Scale"],
   },
@@ -100,12 +152,12 @@ export const systems = [
 export const writingPosts = [
   {
     title: "Why Agent Observability Is the Bottleneck for Enterprise AI",
-    href: "/writing",
+    href: "/vision#writing",
     summary: "The move from demos to deployed agents depends on traces, evals, cost visibility, and supervision.",
   },
   {
     title: "The Evaluation Problem for Long-Horizon Agents",
-    href: "/writing",
+    href: "/vision#writing",
     summary: "Task success, tool precision, hallucination rate, and execution quality need to become first-class metrics.",
   },
   {
@@ -133,6 +185,42 @@ export const speakingTopics = [
   },
 ];
 
+export const publicAppearances = [
+  {
+    title: "Podcast with SinghInUSA",
+    href: "https://youtu.be/rhsBMnU0ArU?si=xMOOmQxL-smh4DtN",
+    label: "PODCAST",
+    body: "A public podcast conversation about Rahat's journey, career, and technology perspective.",
+  },
+  {
+    title: "Podcast with Marco Polo",
+    href: "https://www.youtube.com/watch?v=xvK7NpzfAsI&t=2163s&pp=ygUMcmFoYXQga2hhbm5h0gcJCQQLAYcqIYzv",
+    label: "PODCAST",
+    body: "A public long-form conversation shared as part of Rahat's broader career and technology story.",
+  },
+  {
+    title: "JSFoo Conference Talk",
+    href: "https://www.youtube.com/watch?v=71JdaRofCgA&pp=ygUMcmFoYXQga2hhbm5h",
+    label: "CONFERENCE TALK / PUBLIC ARCHIVE",
+    body: "An earlier public conference talk from Rahat's JavaScript and web-platform chapter.",
+  },
+  {
+    title: "AngularJS Talk",
+    href: "https://www.youtube.com/watch?v=A7SUlXxZ0nc&pp=ygUMcmFoYXQga2hhbm5h",
+    label: "TECH TALK / PUBLIC ARCHIVE",
+    body: "An earlier public technical talk from Rahat's AngularJS and frontend engineering chapter.",
+  },
+  {
+    title: "Hybrid Mobile App Talk",
+    href: "https://www.youtube.com/watch?v=A7SUlXxZ0nc&pp=ygUMcmFoYXQga2hhbm5h",
+    label: "TECH TALK / PUBLIC ARCHIVE",
+    body: "An earlier public technical talk from Rahat's hybrid mobile and cross-platform engineering chapter.",
+  },
+];
+
+export const internalTalkNote =
+  "Conference talks while working for Apple were internal and are not available to post publicly.";
+
 export const designTokens = [
   { name: "Void", value: "#05070D", usage: "Primary background" },
   { name: "Signal Blue", value: "#29B6FF", usage: "AI systems, CTAs, telemetry" },
@@ -153,10 +241,8 @@ export const motionStates = [
 
 export const navItems = [
   { label: "Projects", href: "/projects" },
-  { label: "Writing", href: "/writing" },
   { label: "Speaking", href: "/speaking" },
   { label: "Vision", href: "/vision" },
-  { label: "OS", href: "/os" },
 ];
 
 export const footerLinks = [
@@ -165,6 +251,9 @@ export const footerLinks = [
   { label: "Topmate", href: "https://topmate.io/rahat_khanna" },
   { label: "X", href: "https://x.com/mappmechanic" },
 ];
+
+export const publicSafetyNote =
+  "Views are my own. Public project references are selected context; proprietary details remain private.";
 
 export const visionSignals = [
   { title: "Trustworthy agents", icon: ShieldCheck },

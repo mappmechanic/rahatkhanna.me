@@ -25,6 +25,9 @@
   --space-signal: 202 100% 58%;
   --space-ember: 39 94% 62%;
   --space-mint: 153 60% 55%;
+  --font-body: "Manrope", "Avenir Next", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Avenir Next", Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-mission: "IBM Plex Mono", "SFMono-Regular", "Roboto Mono", ui-monospace, monospace;
 }
 
 @layer base {

@@ -46,8 +46,8 @@ Support this with:
 
 `/writing`
 
-- Essays and thesis development.
-- Future MDX content can grow here.
+- Redirects to `/vision#writing`.
+- Writing should live inside Vision until there is enough published material to justify a standalone public tab.
 - Topics should connect engineering depth to market and human impact.
 
 `/speaking`
@@ -62,14 +62,14 @@ Support this with:
 
 `/os`
 
-- Future Rahat OS explanation.
-- Public/private/agents model.
-- Should feel like a credible product direction, not a finished claim.
+- Redirects to `/vision#rahat-os`.
+- Rahat OS should be framed as a future direction inside Vision, not as a top-level product claim until the real system exists.
+- The public/private/agents model must preserve a hard privacy boundary.
 
 `/ai-multiverse`
 
 - Retired from external navigation.
-- Redirects to `/os` so old links do not expose the outdated AI-tools experience.
+- Redirects to `/vision#rahat-os` so old links do not expose the outdated AI-tools experience.
 
 `/journey`
 

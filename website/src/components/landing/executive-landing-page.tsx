@@ -8,7 +8,7 @@ import { MissionControlHud } from "@/components/brand/mission-control-kit";
 import { SectionShell } from "@/components/brand/primitives";
 import { SpaceMotionScene } from "@/components/brand/space-motion-scene";
 import { AutonomyConstellation, SignalRibbon } from "@/components/brand/unique-elements";
-import { careerArc, metrics, sitePrinciples, speakingTopics, systems, thesisCards, writingPosts } from "@/lib/site-data";
+import { careerArc, contactChannels, metrics, profileHighlights, sitePrinciples, speakingTopics, systems, thesisCards, writingPosts } from "@/lib/site-data";
 
 export function ExecutiveLandingPage() {
   return (
@@ -29,7 +29,7 @@ export function ExecutiveLandingPage() {
         id="arc"
         eyebrow="The arc"
         title="Founder roots, Apple-scale platforms, then the post-AI world."
-        intro="The redesign preserves the human journey, but reorganizes it around the technical pattern that matters now: making autonomous work reliable at scale."
+        intro="My journey connects founder speed, platform-scale engineering, and the technical pattern that matters now: making autonomous work reliable at scale."
         className="bg-black/20"
       >
         <MissionRail
@@ -43,10 +43,19 @@ export function ExecutiveLandingPage() {
       </SectionShell>
 
       <SectionShell
+        id="profile"
+        eyebrow="Profile highlights"
+        title="Real proof points behind the AI systems thesis."
+        intro="The public story should not feel abstract. It comes from founder execution, fintech scale, enterprise systems, Flipkart commerce, Apple platforms, AI infrastructure, and mentorship."
+      >
+        <MissionRail items={profileHighlights} />
+      </SectionShell>
+
+      <SectionShell
         id="build"
         eyebrow="What I build"
-        title="A public-safe portfolio of systems thinking."
-        intro="Apple details stay sanitized. The site focuses on transferable architecture patterns: traces, evals, supervision, memory, policy, and high-scale product engineering."
+        title="A selected portfolio of systems thinking."
+        intro="The work is framed around transferable architecture patterns: traces, evals, supervision, memory, policy, and high-scale product engineering."
       >
         <SignalMatrix
           items={systems.map((system) => ({
@@ -62,8 +71,8 @@ export function ExecutiveLandingPage() {
       <SectionShell
         id="mission-control"
         eyebrow="Mission control"
-        title="The site should feel like the control surface for reliable autonomy."
-        intro="This reusable HUD language now becomes a public-facing proof point: agent fleets, guardrails, eval loops, human escalation, and future humanoid/space systems all share the same operating grammar."
+        title="Reliable autonomy needs a control surface."
+        intro="Agent fleets, guardrails, eval loops, human escalation, and future humanoid or space systems all need the same operating grammar: know what happened, why it happened, and when a human should intervene."
         className="bg-black/20"
       >
         <MissionControlHud />
@@ -73,7 +82,7 @@ export function ExecutiveLandingPage() {
         id="speaking"
         eyebrow="Speaking"
         title="Conference-ready talks for the agent infrastructure era."
-        intro="The speaking page turns your resume into a clear invitation for AI agent conferences, labs, startup summits, and universities."
+        intro="These topics are designed for AI agent conferences, labs, startup summits, universities, and engineering leadership communities."
       >
         <MissionRail
           items={speakingTopics.map((topic, index) => ({
@@ -91,18 +100,21 @@ export function ExecutiveLandingPage() {
       <SectionShell
         id="writing"
         eyebrow="Thought leadership"
-        title="A writing engine for long-term industry authority."
-        intro="The initial writing system gives recruiters, founders, and conference organizers a clear view into how you think about the future."
+        title="Essays on agents, autonomy, and human ambition."
+        intro="The writing hub gives founders, builders, labs, and conference organizers a clear view into how I think about the future."
       >
         <MissionRail
           items={writingPosts.map((post, index) => ({
             label: `ESSAY-0${index + 1}`,
             title: post.title,
             body: post.summary,
-            meta: "thought leadership draft",
+            meta: "essay direction",
             href: post.href,
           }))}
         />
+        <Link href="/vision#writing" className="mt-8 inline-flex items-center gap-2 rounded-md bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-sky-100">
+          Read essay directions <ArrowRight className="h-4 w-4" />
+        </Link>
       </SectionShell>
 
       <SectionShell
@@ -126,7 +138,7 @@ export function ExecutiveLandingPage() {
         label="OPEN TO / SENIOR AI LEADERSHIP, LABS, AND SPEAKING"
         title="Bring me into the room where reliable autonomy is being shaped."
         body="Best fit: senior AI infrastructure leadership, AI agent conference speaking, founder and lab advisory, and mentorship for ambitious young technologists."
-        href="mailto:hello@rahatkhanna.me"
+        href={contactChannels.generalHref}
         action="Start a conversation"
       >
         <div className="grid gap-3 md:grid-cols-2">

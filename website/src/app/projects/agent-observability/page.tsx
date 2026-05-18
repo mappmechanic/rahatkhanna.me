@@ -2,14 +2,12 @@ import type { Metadata } from "next";
 import { Activity, CheckCircle2, GitBranch, Gauge, LockKeyhole, ShieldAlert, Telescope } from "lucide-react";
 
 import { CommandCTA, MissionPageHero, MissionRail, SignalMatrix } from "@/components/brand/mission-page";
-import { MissionControlHud } from "@/components/brand/mission-control-kit";
-import { HudRevealTransitions } from "@/components/brand/motion-system";
 import { SectionShell, SignalBadge, SurfaceCard } from "@/components/brand/primitives";
 import { SignalRibbon } from "@/components/brand/unique-elements";
 
 export const metadata: Metadata = {
   title: "Agent Observability & Evaluation",
-  description: "A sanitized AI agent infrastructure case study covering observability, evaluation, supervision, and guardrails.",
+  description: "An AI agent infrastructure case study covering observability, evaluation, supervision, and guardrails.",
 };
 
 const decisionLog = [
@@ -39,7 +37,7 @@ const stackLayers = [
 ];
 
 const caseMetrics = [
-  { label: "operating mode", value: "sanitized", tone: "signal" as const },
+  { label: "operating lens", value: "systems", tone: "signal" as const },
   { label: "primary thesis", value: "trace first", tone: "mint" as const },
   { label: "quality gate", value: "eval loop", tone: "ember" as const },
   { label: "oversight", value: "human armed", tone: "signal" as const },
@@ -80,11 +78,11 @@ export default function AgentObservabilityPage() {
   return (
     <div className="space-field min-h-screen">
       <MissionPageHero
-        eyebrow="Sanitized case study / AI agent infrastructure"
+        eyebrow="Case study / AI agent infrastructure"
         title="Agent observability is the cockpit for enterprise autonomy."
-        intro="A public-safe breakdown of how to make production agents measurable, inspectable, governable, and ready for human oversight. No proprietary Apple implementation details are disclosed."
+        intro="A practical breakdown of how to make production agents measurable, inspectable, governable, and ready for human oversight."
         metrics={caseMetrics}
-        primaryCta={{ label: "Use as talk foundation", href: "/speaking" }}
+        primaryCta={{ label: "Explore speaking topics", href: "/speaking" }}
         secondaryCta={{ label: "Back to projects", href: "/projects" }}
       >
         <SurfaceCard>
@@ -98,18 +96,14 @@ export default function AgentObservabilityPage() {
 
       <SectionShell
         eyebrow="Outcome pattern"
-        title="The case study is built around operational proof."
-        intro="Instead of describing features, the page exposes the mission signals an executive, lab, or conference organizer would expect to see."
+        title="The operating goal is simple: make agent behavior inspectable."
+        intro="Executives and builders need more than aggregate dashboards. They need to see what happened, why it happened, whether the result was good, and when a human should intervene."
       >
         <SignalMatrix items={outcomeSignals} />
         <SignalRibbon items={["Trace replay", "LLM-as-Judge", "Tool precision", "Human escalation", "Cost visibility"]} />
       </SectionShell>
 
-      <SectionShell title="Mission Control Pattern" intro="The design-system HUD becomes the visual metaphor for the actual architecture: observe, evaluate, constrain, escalate." className="bg-black/20">
-        <MissionControlHud />
-      </SectionShell>
-
-      <SectionShell title="Reference Architecture" intro="This is intentionally abstract. It explains the shape of the reliability system without revealing internal services, data, or implementation specifics." className="bg-black/20">
+      <SectionShell title="Reference Architecture" intro="The pattern can be understood as a layered reliability system: capture behavior, interpret it, evaluate it, and route the right work to humans." className="bg-black/20">
         <MissionRail
           stagger={false}
           items={stackLayers.map((layer, index) => ({
@@ -125,7 +119,7 @@ export default function AgentObservabilityPage() {
         />
       </SectionShell>
 
-      <SectionShell title="Decision Log" intro="This is the Staff+ layer: not just what was built, but which tradeoffs mattered.">
+      <SectionShell title="Key Tradeoffs" intro="The value is not just in the parts. It is in choosing where the system should be strict, where it should be probabilistic, and where human judgment must stay in the loop.">
         <MissionRail
           items={decisionLog.map((decision, index) => ({
             label: `DECISION-0${index + 1}`,
@@ -134,18 +128,15 @@ export default function AgentObservabilityPage() {
             meta: "architecture tradeoff",
           }))}
         />
-        <div className="mt-8">
-          <HudRevealTransitions />
-        </div>
       </SectionShell>
 
-      <SectionShell title="What I Would Present Publicly" intro="The case study is designed to help senior executives, labs, and conference organizers understand the thinking without needing confidential detail." className="bg-black/20">
+      <SectionShell title="Operating Principles" intro="The same reliability questions show up in enterprise agents, humanoid operations, and mission-grade autonomy." className="bg-black/20">
         <div className="grid gap-5 md:grid-cols-2">
           <SurfaceCard>
             <ShieldAlert className="mb-5 h-7 w-7 text-space-ember" />
-            <h2 className="text-xl font-semibold text-white">Confidentiality boundary</h2>
+            <h2 className="text-xl font-semibold text-white">Keep sensitive systems protected</h2>
             <p className="mt-4 text-sm leading-7 text-slate-300">
-              Public content stays at the level of patterns, architecture categories, metrics philosophy, and operational lessons. Internal names, numbers, unreleased capabilities, and proprietary diagrams stay out.
+              Public writing can explain patterns, architecture categories, metrics philosophy, and operating lessons without exposing employer-specific details.
             </p>
           </SurfaceCard>
           <SurfaceCard>
@@ -167,7 +158,7 @@ export default function AgentObservabilityPage() {
       >
         <div className="flex items-center gap-3 text-sm text-slate-300">
           <GitBranch className="h-4 w-4 text-space-signal" />
-          Decision logs, reference architecture, and privacy boundary are ready to become a talk track.
+          Architecture tradeoffs, reference layers, and operating principles can anchor a conference talk.
         </div>
       </CommandCTA>
     </div>

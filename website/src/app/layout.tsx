@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 
 // Styles & Fonts
-import { bodyFont, displayFont, missionFont } from "./fonts";
 import "./globals.css";
 
 // Components
@@ -89,7 +88,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </head>
-      <body className={`${bodyFont.variable} ${displayFont.variable} ${missionFont.variable} flex min-h-screen flex-col bg-background`}>
+      <body className="flex min-h-screen flex-col bg-background">
         <Header />
         <main className="flex-grow">
           {children}
