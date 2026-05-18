@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">AI infrastructure command surface end frame</title>
+  <desc id="desc">A mission-control view connecting agents, evaluation, observability, guardrails, humanoids, and space.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#05070d"/>
+      <stop offset=".5" stop-color="#091627"/>
+      <stop offset="1" stop-color="#16111d"/>
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#2ab6ff" stroke-opacity=".14" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#grid)" opacity=".7"/>
+  <path d="M320 360C560 180 780 260 930 420S1260 660 1580 360" fill="none" stroke="#29b6ff" stroke-opacity=".46" stroke-width="2"/>
+  <path d="M390 710C610 520 830 640 990 500S1240 250 1510 640" fill="none" stroke="#f6b84b" stroke-opacity=".38" stroke-width="2"/>
+  <path d="M540 260C690 450 810 520 1010 450S1300 330 1440 440" fill="none" stroke="#55d991" stroke-opacity=".34" stroke-width="2"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="690" y="360" width="540" height="310" rx="18" fill="#0c1422" fill-opacity=".86" stroke="#29b6ff" stroke-opacity=".42"/>
+    <text x="750" y="435" fill="#29b6ff" font-size="26">COMMAND SURFACE</text>
+    <text x="750" y="502" fill="#ffffff" font-size="52" font-weight="700">Agent reliability stack</text>
+    <text x="750" y="568" fill="#c9d7e8" font-size="28">traces • evals • guardrails • escalation</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#f8fbff">
+    <g transform="translate(300 320)">
+      <circle r="38" fill="#102134" stroke="#29b6ff" stroke-opacity=".75"/>
+      <text x="58" y="8">Agents</text>
+    </g>
+    <g transform="translate(1220 250)">
+      <circle r="38" fill="#102134" stroke="#29b6ff" stroke-opacity=".75"/>
+      <text x="58" y="8">Evaluation</text>
+    </g>
+    <g transform="translate(1420 670)">
+      <circle r="38" fill="#102134" stroke="#55d991" stroke-opacity=".75"/>
+      <text x="58" y="8">Observability</text>
+    </g>
+    <g transform="translate(430 790)">
+      <circle r="38" fill="#102134" stroke="#f6b84b" stroke-opacity=".75"/>
+      <text x="58" y="8">Guardrails</text>
+    </g>
+    <g transform="translate(585 520)">
+      <circle r="38" fill="#102134" stroke="#9a7cff" stroke-opacity=".75"/>
+      <text x="-148" y="8">Humanoids</text>
+    </g>
+    <g transform="translate(1560 430)">
+      <circle r="38" fill="#102134" stroke="#9a7cff" stroke-opacity=".75"/>
+      <text x="58" y="8">Space</text>
+    </g>
+  </g>
+</svg>

@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
-export default function AIMultiverseRedirect() {
+export default function PersonalOSRedirect() {
   redirect("/vision#rahat-os");
 }

@@ -1,141 +1,107 @@
-"use client"; // Add this line to mark the component as a Client Component
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Logo } from "./logo";
-import { usePathname, useRouter } from 'next/navigation';
-import Link from 'next/link';
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+
+import { contactChannels, navItems } from "@/lib/site-data";
+import { cn } from "@/lib/utils";
 
 export function Header() {
-  const [activeSection, setActiveSection] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
-  const router = useRouter();
+  const pathname = usePathname() ?? "";
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if page is scrolled more than 20px
       setIsScrolled(window.scrollY > 20);
-
-      if (pathname === '/') {
-        const sections = ['home', 'about-me', 'portfolio', 'speaking', 'newsletter'];
-        let newActiveSection = 0;
-
-        sections.forEach((section, index) => {
-          const element = document.getElementById(section);
-          if (element) {
-            const offsetTop = element.offsetTop;
-            if (window.pageYOffset >= offsetTop - window.innerHeight / 2) {
-              newActiveSection = index;
-            }
-          }
-        });
-
-        setActiveSection(newActiveSection);
-      }
     };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [pathname]);
-
-  const scrollToSection = (id: string) => {
-    if (id === 'home') {
-      router.push('/');
-      setIsMenuOpen(false);
-      return;
-    }
-    
-    if (pathname !== '/') {
-      router.push(`/#${id}`);
-      setIsMenuOpen(false);
-      return;
-    }
-
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
-    setIsMenuOpen(false);
-  };
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const menuItems = [
-    { label: 'Home', id: 'home' },
-    { label: 'About Me', id: 'about-me' },
-    { label: 'Portfolio', id: 'portfolio' },
-    { label: 'Speaking/Coaching', id: 'speaking' },
-    { label: 'Newsletter', id: 'newsletter' },
-  ];
-
-  const handleAIMultiverseClick = () => {
-    router.push('/ai-multiverse');
-    setIsMenuOpen(false);
-  };
-
-  const isActive = (index: number, itemId: string) => {
-    if (pathname === '/ai-multiverse') {
-      return false; // Don't highlight any main nav items on AI Multiverse page
-    }
-    return pathname === '/' && activeSection === index;
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-black bg-opacity-50 backdrop-blur-md' : 'bg-transparent'
-    }`}>
-      <nav className="container mx-auto px-4 py-6">
-        <div className="flex justify-between items-center">
-          <Link href="/" className="cursor-pointer">
-            <Logo />
-          </Link>
-          <div className="hidden md:flex space-x-4">
-            {menuItems.map((item, index) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.id)}
-                className={`text-white px-3 py-2 rounded-md text-sm font-medium ${
-                  isActive(index, item.id) ? 'bg-purple-600' : 'hover:bg-purple-700'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-          <button
-            className="md:hidden text-white focus:outline-none"
-            onClick={toggleMenu}
-          >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 bg-white bg-opacity-40 backdrop-blur-md p-4 rounded shadow">
-            {menuItems.map((item, index) => (
-              <button
-                key={item.label}
-                onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left text-black px-3 py-2 rounded-md text-sm font-medium ${
-                  isActive(index, item.id) ? 'bg-purple-600' : 'hover:bg-purple-700'
-                } mb-2`}
-              >
-                {item.label}
-              </button>
-            ))}
-            <button
-              onClick={handleAIMultiverseClick}
-              className={`block w-full text-left text-black px-3 py-2 rounded-md text-sm font-medium mb-2 ${
-                pathname === '/ai-multiverse' ? 'bg-purple-600' : 'hover:bg-purple-700'
-              }`}
+    <header
+      className={cn(
+        "fixed left-0 right-0 top-0 z-50 border-b transition duration-300",
+        isScrolled
+          ? "border-space-line/20 bg-space-void/80 backdrop-blur-xl"
+          : "border-transparent bg-transparent"
+      )}
+    >
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10">
+        <Link href="/" className="group flex items-center gap-3" onClick={() => setIsMenuOpen(false)}>
+          <span className="flex h-9 w-9 items-center justify-center rounded-md border border-space-line/40 bg-space-panel/90 text-sm font-semibold text-space-signal">
+            RK
+          </span>
+          <span className="rk-wordmark hidden text-sm font-semibold text-white sm:block">Rahat Khanna</span>
+        </Link>
+
+        <div className="hidden items-center gap-1 md:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                "rounded-md px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white",
+                isActive(item.href) && "bg-white/10 text-white"
+              )}
             >
-              ✨ AI Multiverse
-            </button>
-          </div>
-        )}
+              {item.label}
+            </Link>
+          ))}
+        </div>
+
+        <a
+          href={contactChannels.generalHref}
+          className="hidden rounded-md bg-space-signal px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-sky-300 md:inline-flex"
+        >
+          Contact
+        </a>
+
+        <button
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={isMenuOpen}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-space-line/40 text-white md:hidden"
+          onClick={() => setIsMenuOpen((current) => !current)}
+        >
+          {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
       </nav>
+
+      {isMenuOpen ? (
+        <div className="border-t border-space-line/20 bg-space-void/95 px-6 py-4 backdrop-blur-xl md:hidden">
+          <div className="grid gap-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={cn(
+                  "rounded-md px-3 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white",
+                  isActive(item.href) && "bg-white/10 text-white"
+                )}
+              >
+                {item.label}
+              </Link>
+            ))}
+            <a
+              href={contactChannels.generalHref}
+              className="mt-2 rounded-md bg-space-signal px-3 py-3 text-center text-sm font-semibold text-slate-950"
+            >
+              Contact
+            </a>
+          </div>
+        </div>
+      ) : null}
     </header>
   );
 }
